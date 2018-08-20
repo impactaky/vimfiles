@@ -38,6 +38,7 @@ on_source = 'denite.nvim'
 
 [[plugins]]
 repo = 'impactaky/marionette-show.nvim'
+hook_add = 'runtime! plugin_conf/marionette-show.nvim.vimrc'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
