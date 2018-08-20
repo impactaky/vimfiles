@@ -1,0 +1,304 @@
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+lazy = 1
+on_i = 1
+hook_source = '''
+	let g:lexima_enable_basic_rules=0
+'''
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'simnalamburt/vim-mundo'
+lazy = 1
+hook_add = "nnoremap 'u :MundoToggle<CR>"
+
+[[plugins]]
+repo = 'linkinpark342/xonsh-vim'
+
+[[plugins]]
+repo = 'ozelentok/denite-gtags'
+lazy = 1
+on_source = 'denite.nvim'
+hook_add = '''
+	noremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
+	noremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR> 
+	noremap s[ :Denite -mode=normal gtags_ref:
+	noremap s] :Denite -mode=normal gtags_def:
+'''
+
+[[plugins]]
+repo = 'impactaky/denite-marionette'
+lazy = 1
+on_source = 'denite.nvim'
+
+[[plugins]]
+repo = 'impactaky/marionette-show.nvim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'runtime! plugin_conf/lightline.vim.vimrc'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+hook_add = '''
+	nmap <silent> ga <Plug>(EasyAlign)
+	vmap <silent> ga <Plug>(EasyAlign)
+'''
+
+[[plugins]]
+repo = 'kana/vim-repeat'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kassio/neoterm'
+
+[[plugins]]
+repo = 'kergoth/vim-bitbake'
+
+[[plugins]]
+repo = 'kmnk/vim-unite-giti'
+lazy = 1
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+hook_add = '''
+	nmap gp <Plug>(yankround-gp)
+	nmap gP <Plug>(yankround-gP)
+	nmap p <Plug>(yankround-p)
+	nmap P <Plug>(yankround-P)
+	noremap 'y :Unite yankround<CR>
+	nmap <C-n> <Plug>(yankround-next)
+	nmap <C-p> <Plug>(yankround-prev)
+'''
+
+[[plugins]]
+repo = 'makerj/vim-transit'
+hook_source = 'runtime! plugin_conf/vim-transit.vimrc'
+hook_add = '''
+	nmap 'j vipJV:'<,'>TransItBlockPut<CR>ddVgq
+	let g:transit_src = 'en'
+	let g:transit_dst = 'ja'
+'''
+
+[[plugins]]
+repo = 'mindriot101/vim-yapf'
+
+[[plugins]]
+repo = 'moznion/unite-git-conflict.vim'
+lazy = 1
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+
+[[plugins]]
+repo = 'pocari/vim-denite-kind-open-browser'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+	runtime! plugin_conf/vim-devicons.vimrc
+'''
+
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+hook_add = '''
+	nmap j <Plug>(accelerated_jk_j)
+	nmap k <Plug>(accelerated_jk_k)
+'''
+
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+hook_add = 'runtime! plugin_conf/vim-clang-format.vimrc'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if   = "!has('nvim')"
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if   = "!has('nvim')"
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+lazy = 1
+on_ft = 'rust'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+lazy = 1
+hook_add = '''nmap <silent> 't :NERDTreeToggle<CR>'''
+hook_source = 'runtime! plugin_conf/nerdtree.vimrc'
+
+[[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
+lazy = 1
+on_ft = 'rust'
+hook_source = 'runtime! plugin_conf/deoplete-rust.vimrc'
+
+[[plugins]]
+repo = 'sgur/unite-git_grep'
+lazy = 1
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+lazy = 1
+depends = 'neomru.vim'
+hook_source = 'runtime! plugin_conf/denite.nvim.vimrc'
+hook_add = '''
+	nnoremap 'f :Denite file_rec -mode=insert<CR>
+	nnoremap 'g :Denite -mode=normal grep<CR>
+	nnoremap sr :Denite -resume<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+lazy = 1
+on_i = 1
+hook_source = 'runtime! plugin_conf/deoplete.nvim.vimrc'
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+lazy = 1
+on_source = ['deoplete.nvim']
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+lazy = 1
+hook_add = '''
+	nnoremap sf :exec buffer_name("%") == '' ? "Denite file_mru" : "Denite -default-action=tabopen file_mru"<CR>
+	nnoremap sd :Denite directory_mru<CR> 
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+lazy = 1
+on_source = ['deoplete.nvim']
+hook_add = '''
+	imap <C-e> <Plug>(neosnippet_expand_or_jump)
+	smap <C-e> <Plug>(neosnippet_expand_or_jump)
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+lazy = 1
+on_source = 'neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+lazy = 1
+
+[[plugins]]
+repo = 'Shougo/unite-build'
+lazy = 1
+on_source = 'unite.vim'
+hook_add = '''
+	nmap 'b :execute(join(['Unite build:make:--directory=', g:my_build_directory], ''))<CR>
+	noremap 'B :UniteResume build<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/unite-outline'
+lazy = 1
+on_source = 'unite.vim'
+hook_add = '''
+	noremap 'o :Unite outline<CR>
+'''
+
+[[plugins]]
+repo  = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+lazy = 1
+hook_add = '''noremap 's :VimShellTab<CR>'''
+hook_source = 'runtime! plugin_conf/vimshell.vim'
+
+[[plugins]]
+repo = 'taki4416/denite-yaml'
+
+[[plugins]]
+repo = 'taku-o/vim-vis'
+hook_add = "vnoremap : :B "
+
+[[plugins]]
+repo = 'thinca/vim-prettyprint'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+lazy = 1
+hook_add = '''
+	nnoremap <silent> 'r  :QuickRun<CR>
+	runtime! plugin_conf/vim-quickrun.vimrc
+'''
+
+[[plugins]]
+repo = 'thinca/vim-unite-history'
+lazy = 1
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+	nnoremap <silent> 'c  :TComment<CR>
+	vnoremap <silent> <expr> 'c mode() == '<C-v>' ? ':TCommentInline<CR>' : ':TCommentMaybeInline<CR>'
+	runtime! plugin_conf/tcomment_vim.vimrc
+'''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+hook_add = '''
+	let g:openbrowser_browser_commands = [
+		\ {"name": "firefox",
+		\  "args": ["{browser}", "{uri}"]},
+	\]
+'''
+
+[[plugins]]
+repo = 'ujihisa/unite-launch'
+lazy = 1
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'vim-jp/cpp-vim'
+lazy = 1
+on_ft = 'cpp'
+ 
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'yuratomo/w3m.vim'
+lazy = 1
+if   = "executable('w3m')"
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+hook_source = 'runtime! plugin_conf/deoplete-clang.vimrc'
+on_ft = ['c', 'cpp', 'cmake']
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+hook_source = 'runtime! plugin_conf/deoplete-jedi.vimrc'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'zchee/deoplete-zsh'
+if   = "executable('zsh')"
+on_ft = ['sh', 'zsh']
+hook_source = 'runtime! plugin_conf/deoplete-zsh.vimrc'

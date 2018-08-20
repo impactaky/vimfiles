@@ -1,0 +1,4 @@
+*.swp
+installer.sh
+my_conf.vimrc
+undo
