@@ -1,4 +1,9 @@
 [[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+build = './install.sh'
+hook_add = 'runtime! plugin_conf/LanguageClient-neovim.vimrc'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 
 [[plugins]]
@@ -139,11 +144,11 @@ lazy = 1
 hook_add = '''nmap <silent> 't :NERDTreeToggle<CR>'''
 hook_source = 'runtime! plugin_conf/nerdtree.vimrc'
 
-[[plugins]]
-repo = 'sebastianmarkow/deoplete-rust'
-lazy = 1
-on_ft = 'rust'
-hook_source = 'runtime! plugin_conf/deoplete-rust.vimrc'
+# [[plugins]]
+# repo = 'sebastianmarkow/deoplete-rust'
+# lazy = 1
+# on_ft = 'rust'
+# hook_source = 'runtime! plugin_conf/deoplete-rust.vimrc'
 
 [[plugins]]
 repo = 'sgur/unite-git_grep'
