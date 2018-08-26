@@ -1,7 +1,13 @@
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
 build = './install.sh'
-hook_add = 'runtime! plugin_conf/LanguageClient-neovim.vimrc'
+hook_add = '''
+	runtime! plugin_conf/LanguageClient-neovim.vimrc
+	noremap g[ :Denite -mode=normal -auto-preview references<CR>
+	noremap g] :call LanguageClient#textDocument_definition()<CR>
+	noremap s[ :Denite documentSymbol<CR>
+	noremap gd :call LanguageClient#textDocument_hover()<CR>
+'''
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -29,12 +35,12 @@ repo = 'linkinpark342/xonsh-vim'
 repo = 'ozelentok/denite-gtags'
 lazy = 1
 on_source = 'denite.nvim'
-hook_add = '''
-	noremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
-	noremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR> 
-	noremap s[ :Denite -mode=normal gtags_ref:
-	noremap s] :Denite -mode=normal gtags_def:
-'''
+# hook_add = '''
+# 	noremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
+# 	noremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR> 
+# 	noremap s[ :Denite -mode=normal gtags_ref:
+# 	noremap s] :Denite -mode=normal gtags_def:
+# '''
 
 [[plugins]]
 repo = 'impactaky/denite-marionette'
@@ -144,11 +150,11 @@ lazy = 1
 hook_add = '''nmap <silent> 't :NERDTreeToggle<CR>'''
 hook_source = 'runtime! plugin_conf/nerdtree.vimrc'
 
-[[plugins]]
-repo = 'sebastianmarkow/deoplete-rust'
-lazy = 1
-on_ft = 'rust'
-hook_source = 'runtime! plugin_conf/deoplete-rust.vimrc'
+# [[plugins]]
+# repo = 'sebastianmarkow/deoplete-rust'
+# lazy = 1
+# on_ft = 'rust'
+# hook_source = 'runtime! plugin_conf/deoplete-rust.vimrc'
 
 [[plugins]]
 repo = 'sgur/unite-git_grep'
@@ -174,6 +180,12 @@ repo = 'Shougo/deoplete.nvim'
 lazy = 1
 on_i = 1
 hook_source = 'runtime! plugin_conf/deoplete.nvim.vimrc'
+
+[[plugins]]
+repo = 'Shougo/echodoc.vim'
+hook_add = '''
+    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+'''
 
 [[plugins]]
 repo = 'Shougo/neco-syntax'
@@ -298,10 +310,10 @@ if   = "executable('w3m')"
 # hook_source = 'runtime! plugin_conf/deoplete-clang.vimrc'
 # on_ft = ['c', 'cpp', 'cmake']
 
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-hook_source = 'runtime! plugin_conf/deoplete-jedi.vimrc'
-on_ft = ['python']
+# [[plugins]]
+# repo = 'zchee/deoplete-jedi'
+# hook_source = 'runtime! plugin_conf/deoplete-jedi.vimrc'
+# on_ft = ['python']
 
 [[plugins]]
 repo = 'zchee/deoplete-zsh'

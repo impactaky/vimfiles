@@ -91,7 +91,7 @@ set shiftwidth=0
 
 " -----------------------------------------------------------タブ
 " タブをスペースに展開しない
-set noexpandtab
+set expandtab
 " 行頭ではシフト幅，それ以外ではタブ幅
 set smarttab
 " タブ幅
@@ -190,7 +190,7 @@ set prompt
 " 補完時にタグ名と整理された検索パターンを表示
 set showfulltag
 " 補完オプション
-" set completeopt="menu,preview"
+set completeopt="menu"
 " 補完の時に大文字小文字の修正を行う
 " set infercase
 
