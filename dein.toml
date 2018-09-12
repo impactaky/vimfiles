@@ -2,13 +2,15 @@
 repo = 'autozimu/LanguageClient-neovim'
 build = './install.sh'
 hook_add = '''
-	runtime! plugin_conf/LanguageClient-neovim.vimrc
+	runtime plugin_conf/LanguageClient-neovim.vimrc
 	noremap g[ :Denite -mode=normal -auto-preview references<CR>
 	noremap g] :call LanguageClient#textDocument_definition()<CR>
 	noremap s[ :Denite documentSymbol<CR>
 	noremap gd :call LanguageClient#textDocument_hover()<CR>
 '''
 
+[[plugins]]
+repo = 'cespare/vim-toml'
 [[plugins]]
 repo = 'cespare/vim-toml'
 
@@ -49,11 +51,11 @@ on_source = 'denite.nvim'
 
 [[plugins]]
 repo = 'impactaky/marionette-show.nvim'
-hook_add = 'runtime! plugin_conf/marionette-show.nvim.vimrc'
+hook_add = 'runtime plugin_conf/marionette-show.nvim.vimrc'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-hook_add = 'runtime! plugin_conf/lightline.vim.vimrc'
+hook_add = 'runtime plugin_conf/lightline.vim.vimrc'
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
@@ -93,7 +95,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'makerj/vim-transit'
-hook_source = 'runtime! plugin_conf/vim-transit.vimrc'
+hook_source = 'runtime plugin_conf/vim-transit.vimrc'
 hook_add = '''
 	nmap 'j vipJV:'<,'>TransItBlockPut<CR>ddVgq
 	let g:transit_src = 'en'
@@ -117,19 +119,20 @@ repo = 'pocari/vim-denite-kind-open-browser'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 hook_add = '''
-	runtime! plugin_conf/vim-devicons.vimrc
+	runtime plugin_conf/vim-devicons.vimrc
 '''
 
 [[plugins]]
 repo = 'rhysd/accelerated-jk'
 hook_add = '''
+    runtime plugin_conf/accelerated-jk.vim
 	nmap j <Plug>(accelerated_jk_j)
 	nmap k <Plug>(accelerated_jk_k)
 '''
 
 [[plugins]]
 repo = 'rhysd/vim-clang-format'
-hook_add = 'runtime! plugin_conf/vim-clang-format.vimrc'
+hook_add = 'runtime plugin_conf/vim-clang-format.vimrc'
 
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
@@ -148,13 +151,13 @@ on_ft = 'rust'
 repo = 'scrooloose/nerdtree'
 lazy = 1
 hook_add = '''nmap <silent> 't :NERDTreeToggle<CR>'''
-hook_source = 'runtime! plugin_conf/nerdtree.vimrc'
+hook_source = 'runtime plugin_conf/nerdtree.vimrc'
 
 # [[plugins]]
 # repo = 'sebastianmarkow/deoplete-rust'
 # lazy = 1
 # on_ft = 'rust'
-# hook_source = 'runtime! plugin_conf/deoplete-rust.vimrc'
+# hook_source = 'runtime plugin_conf/deoplete-rust.vimrc'
 
 [[plugins]]
 repo = 'sgur/unite-git_grep'
@@ -168,7 +171,7 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/denite.nvim'
 lazy = 1
 depends = 'neomru.vim'
-hook_source = 'runtime! plugin_conf/denite.nvim.vimrc'
+hook_source = 'runtime plugin_conf/denite.nvim.vimrc'
 hook_add = '''
 	nnoremap 'f :Denite file_rec -mode=insert<CR>
 	nnoremap 'g :Denite -mode=normal grep<CR>
@@ -179,7 +182,7 @@ hook_add = '''
 repo = 'Shougo/deoplete.nvim'
 lazy = 1
 on_i = 1
-hook_source = 'runtime! plugin_conf/deoplete.nvim.vimrc'
+hook_source = 'runtime plugin_conf/deoplete.nvim.vimrc'
 
 [[plugins]]
 repo = 'Shougo/echodoc.vim'
@@ -242,7 +245,7 @@ repo  = 'Shougo/vimproc.vim'
 repo = 'Shougo/vimshell.vim'
 lazy = 1
 hook_add = '''noremap 's :VimShellTab<CR>'''
-hook_source = 'runtime! plugin_conf/vimshell.vim'
+hook_source = 'runtime plugin_conf/vimshell.vim'
 
 [[plugins]]
 repo = 'taki4416/denite-yaml'
@@ -259,7 +262,7 @@ repo = 'thinca/vim-quickrun'
 lazy = 1
 hook_add = '''
 	nnoremap <silent> 'r  :QuickRun<CR>
-	runtime! plugin_conf/vim-quickrun.vimrc
+	runtime plugin_conf/vim-quickrun.vimrc
 '''
 
 [[plugins]]
@@ -272,7 +275,7 @@ repo = 'tomtom/tcomment_vim'
 hook_add = '''
 	nnoremap <silent> 'c  :TComment<CR>
 	vnoremap <silent> <expr> 'c mode() == '<C-v>' ? ':TCommentInline<CR>' : ':TCommentMaybeInline<CR>'
-	runtime! plugin_conf/tcomment_vim.vimrc
+	runtime plugin_conf/tcomment_vim.vimrc
 '''
 
 [[plugins]]
@@ -307,16 +310,16 @@ if   = "executable('w3m')"
 
 # [[plugins]]
 # repo = 'zchee/deoplete-clang'
-# hook_source = 'runtime! plugin_conf/deoplete-clang.vimrc'
+# hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
 # on_ft = ['c', 'cpp', 'cmake']
 
 # [[plugins]]
 # repo = 'zchee/deoplete-jedi'
-# hook_source = 'runtime! plugin_conf/deoplete-jedi.vimrc'
+# hook_source = 'runtime plugin_conf/deoplete-jedi.vimrc'
 # on_ft = ['python']
 
 [[plugins]]
 repo = 'zchee/deoplete-zsh'
 if   = "executable('zsh')"
 on_ft = ['sh', 'zsh']
-hook_source = 'runtime! plugin_conf/deoplete-zsh.vimrc'
+hook_source = 'runtime plugin_conf/deoplete-zsh.vimrc'

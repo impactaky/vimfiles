@@ -1,13 +1,7 @@
-" set fileencodings=iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,utf-8,ucs-bom,euc-jp,eucjp-ms,cp932
-if has('kaoriya')
-	set fileencodings=guess
-else
-	set fileencodings=utf-8,ucs-bom,euc-jp,eucjp-ms,cp932
-endif
+set fileencodings=utf-8,ucs-bom,euc-jp,eucjp-ms,cp932
+
 " set fileformats=dos,unix,mac
 set fileformats=unix,dos,mac
-
-set encoding=utf-8
 
 " %機能の強化
 :runtime macros/matchit.vim
@@ -28,7 +22,7 @@ imap OB <Down>
 imap OC <Right>
 imap OD <Left>
 
-runtime! neovim_native.vimrc
+runtime! nvim_native.vimrc
 
 runtime! my_conf.vimrc
 " 1つ上のディレクトリのws.vimrcを読み込む
@@ -65,7 +59,3 @@ elseif has("win32")
 	set sh=powershell
 endif
 tnoremap <silent> <ESC> <C-\><C-n>
-
-filetype plugin indent on
-
-

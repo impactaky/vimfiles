@@ -25,7 +25,6 @@ set shortmess="aoOtTAIcF"
 set showbreak=+++\  
 set showfulltag
 set showmatch
-set signcolumn=yes
 set smartcase
 set smartindent
 set softtabstop=4
