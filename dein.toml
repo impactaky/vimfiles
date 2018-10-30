@@ -11,8 +11,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'cespare/vim-toml'
-[[plugins]]
-repo = 'cespare/vim-toml'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -46,6 +44,11 @@ on_source = 'denite.nvim'
 
 [[plugins]]
 repo = 'impactaky/denite-marionette'
+lazy = 1
+on_source = 'denite.nvim'
+
+[[plugins]]
+repo = 'impactaky/denite-rtags'
 lazy = 1
 on_source = 'denite.nvim'
 
@@ -308,10 +311,10 @@ repo = 'yuratomo/w3m.vim'
 lazy = 1
 if   = "executable('w3m')"
 
-# [[plugins]]
-# repo = 'zchee/deoplete-clang'
-# hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
-# on_ft = ['c', 'cpp', 'cmake']
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
+on_ft = ['c', 'cpp', 'cmake']
 
 # [[plugins]]
 # repo = 'zchee/deoplete-jedi'
