@@ -1,8 +1,8 @@
 
 " デフォルトキーマップ 有効/無効
 let g:tcomment_maps = 1
-let g:tcomment_opleader1 = 'sc'
-let g:tcommentMapLeaderOp2 = 'sC'
+let g:tcomment_opleader1 = 'zc'
+let g:tcommentMapLeaderOp2 = 'zC'
 " コメント解除時に右側スペースを削除
 let g:tcomment#rstrip_on_uncmment = 2
 

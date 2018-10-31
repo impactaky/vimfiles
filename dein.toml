@@ -5,7 +5,7 @@ hook_add = '''
 	runtime plugin_conf/LanguageClient-neovim.vimrc
 	noremap g[ :Denite -mode=normal -auto-preview references<CR>
 	noremap g] :call LanguageClient#textDocument_definition()<CR>
-	noremap s[ :Denite documentSymbol<CR>
+	noremap z[ :Denite documentSymbol<CR>
 	noremap gd :call LanguageClient#textDocument_hover()<CR>
 '''
 
@@ -22,6 +22,17 @@ hook_source = '''
 
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+    g:EasyMotion_do_mapping=0
+    nmap s <Plug>(easymotion-bd-jk)
+    xmap s <Plug>(easymotion-s2)
+    omap z <Plug>(easymotion-s2)
+    omap of <Plug>(easymotion-f)
+    omap ot <Plug>(easymotion-t)
+'''
 
 [[plugins]]
 repo = 'simnalamburt/vim-mundo'
@@ -176,9 +187,9 @@ lazy = 1
 depends = 'neomru.vim'
 hook_source = 'runtime plugin_conf/denite.nvim.vimrc'
 hook_add = '''
-	nnoremap 'f :Denite file_rec -mode=insert<CR>
+	nnoremap zf :Denite file_rec -mode=insert<CR>
 	nnoremap 'g :Denite -mode=normal grep<CR>
-	nnoremap sr :Denite -resume<CR>
+	nnoremap zr :Denite -resume<CR>
 '''
 
 [[plugins]]
@@ -202,8 +213,8 @@ on_source = ['deoplete.nvim']
 repo = 'Shougo/neomru.vim'
 lazy = 1
 hook_add = '''
-	nnoremap sf :exec buffer_name("%") == '' ? "Denite file_mru" : "Denite -default-action=tabopen file_mru"<CR>
-	nnoremap sd :Denite directory_mru<CR> 
+	nnoremap 'f :exec buffer_name("%") == '' ? "Denite file_mru" : "Denite -default-action=tabopen file_mru"<CR>
+	nnoremap 'd :Denite directory_mru<CR> 
 '''
 
 [[plugins]]
