@@ -27,7 +27,7 @@ repo = 'cocopon/iceberg.vim'
 repo = 'easymotion/vim-easymotion'
 hook_add = '''
     g:EasyMotion_do_mapping=0
-    nmap s <Plug>(easymotion-bd-jk)
+    nmap s <Plug>(easymotion-s2)
     xmap s <Plug>(easymotion-s2)
     omap z <Plug>(easymotion-s2)
     omap of <Plug>(easymotion-f)
@@ -266,7 +266,7 @@ repo = 'taki4416/denite-yaml'
 
 [[plugins]]
 repo = 'taku-o/vim-vis'
-hook_add = "vnoremap : :B "
+# hook_add = "vnoremap : :B "
 
 [[plugins]]
 repo = 'thinca/vim-prettyprint'

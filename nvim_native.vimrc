@@ -37,10 +37,22 @@ set undolevels=1000
 set virtualedit+=block
 set wildmode=longest:list,full
 
+function! VirtMove(move_command) abort range
+    normal! gv
+    let pos = getpos(".")
+    let col = pos[2]+pos[3]-1
+    execute "normal! ".a:move_command
+    let line = line(".")
+    call cursor(line, 0, col)
+endfunction
+xmap } :'<,'>call VirtMove("}")<CR>
+xmap { :'<,'>call VirtMove("{")<CR>
+
 " ヤンクでカーソル位置の単語を置換
 nnoremap <silent> ciy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 noremap Y y$              
 noremap <C-[> $
+
 " mark
 nnoremap '' '
 nnoremap "" "
