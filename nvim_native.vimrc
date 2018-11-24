@@ -45,8 +45,26 @@ function! VirtMove(move_command) abort range
     let line = line(".")
     call cursor(line, 0, col)
 endfunction
-xmap } :'<,'>call VirtMove("}")<CR>
-xmap { :'<,'>call VirtMove("{")<CR>
+
+function! NextColBlank() abort range
+    normal! gv
+    let line = 1
+    while (strdisplaywidth(getline(line(".")+line)) >= virtcol("."))
+        let line += 1
+    endwhile
+    execute "normal! ".string(line)."j"
+endfunction
+xmap } :'<,'>call NextColBlank()<CR>
+
+function! PrevColBlank() abort range
+    normal! gv
+    let line = 1
+    while (strdisplaywidth(getline(line(".")-line)) >= virtcol("."))
+        let line += 1
+    endwhile
+    execute "normal! ".string(line)."k"
+endfunction
+xmap { :'<,'>call PrevColBlank()<CR>
 
 " ヤンクでカーソル位置の単語を置換
 nnoremap <silent> ciy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
