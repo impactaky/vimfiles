@@ -1,13 +1,13 @@
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-build = './install.sh'
-hook_add = '''
-	runtime plugin_conf/LanguageClient-neovim.vimrc
-	noremap g[ :Denite -mode=normal -auto-preview references<CR>
-	noremap g] :call LanguageClient#textDocument_definition()<CR>
-	noremap z[ :Denite documentSymbol<CR>
-	noremap gd :call LanguageClient#textDocument_hover()<CR>
-'''
+# [[plugins]]
+# repo = 'autozimu/LanguageClient-neovim'
+# build = './install.sh'
+# hook_add = '''
+# 	runtime plugin_conf/LanguageClient-neovim.vimrc
+# 	noremap g[ :Denite -mode=normal -auto-preview references<CR>
+# 	noremap g] :call LanguageClient#textDocument_definition()<CR>
+# 	noremap z[ :Denite documentSymbol<CR>
+# 	noremap gd :call LanguageClient#textDocument_hover()<CR>
+# '''
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -111,7 +111,7 @@ hook_add = '''
 repo = 'makerj/vim-transit'
 hook_source = 'runtime plugin_conf/vim-transit.vimrc'
 hook_add = '''
-	nmap 'j vipJV:'<,'>TransItBlockPut<CR>ddVgq
+	nmap 'j vipJV:'<,'>TransItBlockPut<CR>kddVgq
 	let g:transit_src = 'en'
 	let g:transit_dst = 'ja'
 '''
@@ -126,6 +126,9 @@ on_source = 'unite.vim'
 
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
+hook_add = '''
+    let g:vim_markdown_folding_disabled = 1
+'''
 
 [[plugins]]
 repo = 'pocari/vim-denite-kind-open-browser'
