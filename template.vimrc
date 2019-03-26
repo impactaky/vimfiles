@@ -2,8 +2,8 @@
 let g:my_vim_dir = '$HOME/vimfiles'
 
 " clang settings
-let g:my_libclang_path     = "/usr/lib/llvm-6.0/lib/libclang.so"
-let g:my_clang_include_dir = "/usr/lib/llvm-6.0/include/"
+let g:my_libclang_path     = "/usr/lib/llvm-7/lib/libclang.so"
+let g:my_clang_include_dir = "/usr/lib/llvm-7/include/"
 let g:my_clang_option = ''
 
 " vimproc
