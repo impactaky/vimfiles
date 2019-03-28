@@ -46,12 +46,12 @@ repo = 'linkinpark342/xonsh-vim'
 repo = 'ozelentok/denite-gtags'
 lazy = 1
 on_source = 'denite.nvim'
-# hook_add = '''
-# 	noremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
-# 	noremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR> 
-# 	noremap s[ :Denite -mode=normal gtags_ref:
-# 	noremap s] :Denite -mode=normal gtags_def:
-# '''
+hook_add = '''
+	noremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
+	noremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR>
+	noremap s[ :Denite -mode=normal gtags_ref:
+	noremap s] :Denite -mode=normal gtags_def:
+'''
 
 [[plugins]]
 repo = 'impactaky/denite-marionette'
@@ -327,6 +327,7 @@ if   = "executable('w3m')"
 
 [[plugins]]
 repo = 'zchee/deoplete-clang'
+lazy = 1
 hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
 on_ft = ['c', 'cpp', 'cmake']
 

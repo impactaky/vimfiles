@@ -6,6 +6,22 @@ let g:LanguageClient_serverCommands = {
     \ }
 let g:LanguageClient_autoStart = 1
 
+let g:LanguageClient_diagnosticsDisplay = {
+\    1: {
+\        "name": "Error",
+\        "texthl": "ALEError",
+\        "signText": "✘",
+\        "signTexthl": "ALEErrorSign",
+\    },
+\    2: {
+\        "name": "Warning",
+\        "texthl": "ALEWarning",
+\        "signText": "!",
+\        "signTexthl": "ALEWarningSign",
+\    },
+\}
+
+
 " \ 'c': ['cquery', '--log-file=/tmp/cp.log', '--init={"cacheDirectory":"/tmp/cquery/"}'],
 " \ 'cpp': ['cquery', '--log-file=/tmp/cp.log', '--init={"cacheDirectory":"/tmp/cquery/"}'],
 
