@@ -1,6 +1,8 @@
 " vim
 let g:my_vim_dir = '$HOME/vimfiles'
 
+let mapleader = "'"
+
 " clang settings
 let g:my_libclang_path     = "/usr/lib/llvm-7/lib/libclang.so"
 let g:my_clang_include_dir = "/usr/lib/llvm-7/include/"
@@ -22,6 +24,4 @@ let g:my_build_directory = './'
 " python3
 let g:my_python3_path     = "/usr/bin/python3"
 
-" for konsole
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
 set guicursor=

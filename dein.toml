@@ -3,10 +3,10 @@ repo = 'autozimu/LanguageClient-neovim'
 build = './install.sh'
 hook_add = '''
 	runtime plugin_conf/LanguageClient-neovim.vimrc
-	noremap g[ :Denite -mode=normal -auto-preview references<CR>
-	noremap g] :call LanguageClient#textDocument_definition()<CR>
-	noremap z[ :Denite documentSymbol<CR>
-	noremap gd :call LanguageClient#textDocument_hover()<CR>
+	nnoremap g[ :Denite -mode=normal -auto-preview references<CR>
+	nnoremap g] :call LanguageClient#textDocument_definition()<CR>
+	nnoremap z[ :Denite documentSymbol<CR>
+	nnoremap gd :call LanguageClient#textDocument_hover()<CR>
 '''
 
 [[plugins]]
@@ -27,9 +27,9 @@ repo = 'cocopon/iceberg.vim'
 repo = 'easymotion/vim-easymotion'
 hook_add = '''
     g:EasyMotion_do_mapping=0
-    nmap s <Plug>(easymotion-s2)
-    xmap s <Plug>(easymotion-s2)
-    omap z <Plug>(easymotion-s2)
+    nmap s <Plug>(easymotion-s)
+    xmap s <Plug>(easymotion-s)
+    omap z <Plug>(easymotion-s)
     omap of <Plug>(easymotion-f)
     omap ot <Plug>(easymotion-t)
 '''
@@ -37,20 +37,34 @@ hook_add = '''
 [[plugins]]
 repo = 'simnalamburt/vim-mundo'
 lazy = 1
-hook_add = "nnoremap 'u :MundoToggle<CR>"
+hook_add = "nnoremap <Leader>u :MundoToggle<CR>"
+
+[[plugins]]
+repo = 'szymonmaszke/vimpyter'
 
 [[plugins]]
 repo = 'linkinpark342/xonsh-vim'
+
+[[plugins]]
+repo = "OmniSharp/omnisharp-vim"
+lazy = 1
+on_ft = ["cs"]
+hook_source = 'runtime plugin_conf/omnisharp-vim.vimrc'
+
+[[plugins]]
+repo = "Robzz/deoplete-omnisharp"
+lazy = 1
+on_source = ["omnisharp-vim"]
 
 [[plugins]]
 repo = 'ozelentok/denite-gtags'
 lazy = 1
 on_source = 'denite.nvim'
 # hook_add = '''
-# 	noremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
-# 	noremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR>
-# 	noremap s[ :Denite -mode=normal gtags_ref:
-# 	noremap s] :Denite -mode=normal gtags_def:
+# 	nnoremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
+# 	nnoremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR>
+# 	nnoremap s[ :Denite -mode=normal gtags_ref:
+# 	nnoremap s] :Denite -mode=normal gtags_def:
 # '''
 
 [[plugins]]
@@ -102,7 +116,7 @@ hook_add = '''
 	nmap gP <Plug>(yankround-gP)
 	nmap p <Plug>(yankround-p)
 	nmap P <Plug>(yankround-P)
-	noremap 'y :Unite yankround<CR>
+	nnoremap <Leader>y :Unite yankround<CR>
 	nmap <C-n> <Plug>(yankround-next)
 	nmap <C-p> <Plug>(yankround-prev)
 '''
@@ -111,7 +125,7 @@ hook_add = '''
 repo = 'makerj/vim-transit'
 hook_source = 'runtime plugin_conf/vim-transit.vimrc'
 hook_add = '''
-	nmap 'j vipJV:'<,'>TransItBlockPut<CR>kddVgq
+	nmap <Leader>j vipJV:'<,'>TransItBlockPut<CR>kddVgq
 	let g:transit_src = 'en'
 	let g:transit_dst = 'ja'
 '''
@@ -167,7 +181,7 @@ on_ft = 'rust'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 lazy = 1
-hook_add = '''nmap <silent> 't :NERDTreeToggle<CR>'''
+hook_add = '''nnoremap <silent> <Leader>t :NERDTreeToggle<CR>'''
 hook_source = 'runtime plugin_conf/nerdtree.vimrc'
 
 # [[plugins]]
@@ -191,7 +205,7 @@ depends = 'neomru.vim'
 hook_source = 'runtime plugin_conf/denite.nvim.vimrc'
 hook_add = '''
 	nnoremap zf :Denite file_rec -mode=insert<CR>
-	nnoremap 'g :Denite -mode=normal grep<CR>
+	nnoremap <Leader>g :Denite -mode=normal grep<CR>
 	nnoremap zr :Denite -resume<CR>
 '''
 
@@ -216,8 +230,8 @@ on_source = ['deoplete.nvim']
 repo = 'Shougo/neomru.vim'
 lazy = 1
 hook_add = '''
-	nnoremap 'f :exec buffer_name("%") == '' ? "Denite file_mru" : "Denite -default-action=tabopen file_mru"<CR>
-	nnoremap 'd :Denite directory_mru<CR> 
+	nnoremap <Leader>f :exec buffer_name("%") == '' ? "Denite file_mru" : "Denite -default-action=tabopen file_mru"<CR>
+	nnoremap zd :Denite directory_mru<CR> 
 '''
 
 [[plugins]]
@@ -243,8 +257,8 @@ repo = 'Shougo/unite-build'
 lazy = 1
 on_source = 'unite.vim'
 hook_add = '''
-	nmap 'b :execute(join(['Unite build:make:--directory=', g:my_build_directory], ''))<CR>
-	noremap 'B :UniteResume build<CR>
+	nnoremap <Leader>b :execute(join(['Unite build:make:--directory=', g:my_build_directory], ''))<CR>
+	nnoremap <Leader>B :UniteResume build<CR>
 '''
 
 [[plugins]]
@@ -252,7 +266,7 @@ repo = 'Shougo/unite-outline'
 lazy = 1
 on_source = 'unite.vim'
 hook_add = '''
-	noremap 'o :Unite outline<CR>
+	nnoremap <Leader>o :Unite outline<CR>
 '''
 
 [[plugins]]
@@ -261,7 +275,7 @@ repo  = 'Shougo/vimproc.vim'
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
 lazy = 1
-hook_add = '''noremap 's :VimShellTab<CR>'''
+hook_add = '''nnoremap <Leader>s :VimShellTab<CR>'''
 hook_source = 'runtime plugin_conf/vimshell.vim'
 
 [[plugins]]
@@ -278,7 +292,7 @@ repo = 'thinca/vim-prettyprint'
 repo = 'thinca/vim-quickrun'
 lazy = 1
 hook_add = '''
-	nnoremap <silent> 'r  :QuickRun<CR>
+	nnoremap <silent> <Leader>r  :QuickRun<CR>
 	runtime plugin_conf/vim-quickrun.vimrc
 '''
 
@@ -290,8 +304,8 @@ on_source = 'unite.vim'
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = '''
-	nnoremap <silent> 'c  :TComment<CR>
-	vnoremap <silent> <expr> 'c mode() == '<C-v>' ? ':TCommentInline<CR>' : ':TCommentMaybeInline<CR>'
+	nnoremap <silent> <Leader>c  :TComment<CR>
+	vnoremap <silent> <expr> <Leader>c mode() == '<C-v>' ? ':TCommentInline<CR>' : ':TCommentMaybeInline<CR>'
 	runtime plugin_conf/tcomment_vim.vimrc
 '''
 
