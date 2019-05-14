@@ -40,21 +40,7 @@ lazy = 1
 hook_add = "nnoremap <Leader>u :MundoToggle<CR>"
 
 [[plugins]]
-repo = 'szymonmaszke/vimpyter'
-
-[[plugins]]
 repo = 'linkinpark342/xonsh-vim'
-
-[[plugins]]
-repo = "OmniSharp/omnisharp-vim"
-lazy = 1
-on_ft = ["cs"]
-hook_source = 'runtime plugin_conf/omnisharp-vim.vimrc'
-
-[[plugins]]
-repo = "Robzz/deoplete-omnisharp"
-lazy = 1
-on_source = ["omnisharp-vim"]
 
 [[plugins]]
 repo = 'ozelentok/denite-gtags'
