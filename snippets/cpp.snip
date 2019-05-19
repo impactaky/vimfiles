@@ -1,0 +1,13 @@
+# range indexed
+snippet     enumerate
+options     head
+abbr        for (:|indexed) {}
+    for (${1:const auto& }${2:e} : ${3:container} | indexed(0)) {
+        ${0:TARGET}
+    }
+
+# using boost adaptor indexed
+snippet     use_indexed
+options     head
+abbr        using boost::adaptors::indexed;
+    using boost::adaptors::indexed;

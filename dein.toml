@@ -235,6 +235,7 @@ on_source = ['deoplete.nvim']
 hook_add = '''
 	imap <C-e> <Plug>(neosnippet_expand_or_jump)
 	smap <C-e> <Plug>(neosnippet_expand_or_jump)
+	runtime plugin_conf/neosnippet.vim.vimrc
 '''
 
 [[plugins]]
