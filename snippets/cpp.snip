@@ -6,6 +6,14 @@ abbr        for (:|indexed) {}
         ${0:TARGET}
     }
 
+# range based for
+snippet     for_
+options     head
+abbr        for (:) {}
+    for (const auto& e : ${1:container}) {
+        ${0:TARGET}
+    }
+
 # using boost adaptor indexed
 snippet     use_indexed
 options     head
