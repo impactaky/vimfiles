@@ -7,6 +7,7 @@ hook_add = '''
 	nnoremap g] :call LanguageClient#textDocument_definition()<CR>
 	nnoremap z[ :Denite documentSymbol<CR>
 	nnoremap gd :call LanguageClient#textDocument_hover()<CR>
+	nnoremap <Space>r :call LanguageClient#textDocument_rename()<CR>
 '''
 
 [[plugins]]

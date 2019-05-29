@@ -24,6 +24,7 @@ imap OD <Left>
 
 runtime! nvim_native.vimrc
 
+runtime! template.vimrc
 runtime! my_conf.vimrc
 " 1つ上のディレクトリのws.vimrcを読み込む
 if filereadable("../ws.vimrc")
