@@ -9,6 +9,7 @@ hook_add = '''
 	nnoremap gd :call LanguageClient#textDocument_hover()<CR>
 	nnoremap <Space>r :call LanguageClient#textDocument_rename()<CR>
 '''
+if = "!get(g:, 'lsp_disable', 0)"
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -47,12 +48,12 @@ repo = 'linkinpark342/xonsh-vim'
 repo = 'ozelentok/denite-gtags'
 lazy = 1
 on_source = 'denite.nvim'
-# hook_add = '''
-# 	nnoremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
-# 	nnoremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR>
-# 	nnoremap s[ :Denite -mode=normal gtags_ref:
-# 	nnoremap s] :Denite -mode=normal gtags_def:
-# '''
+hook_add = '''
+	nnoremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
+	nnoremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR>
+	nnoremap s[ :Denite -mode=normal gtags_ref:
+	nnoremap s] :Denite -mode=normal gtags_def:
+'''
 
 [[plugins]]
 repo = 'impactaky/denite-marionette'
@@ -63,6 +64,7 @@ on_source = 'denite.nvim'
 repo = 'impactaky/denite-rtags'
 lazy = 1
 on_source = 'denite.nvim'
+if = "!get(g:, 'rtags_disable', 0)"
 
 [[plugins]]
 repo = 'impactaky/marionette-show.nvim'
@@ -335,11 +337,12 @@ repo = 'yuratomo/w3m.vim'
 lazy = 1
 if   = "executable('w3m')"
 
-# [[plugins]]
-# repo = 'zchee/deoplete-clang'
-# lazy = 1
-# hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
-# on_ft = ['c', 'cpp', 'cmake']
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+lazy = 1
+hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
+on_ft = ['c', 'cpp', 'cmake']
+if = "get(g:, 'lsp_disable', 0)"
 
 # [[plugins]]
 # repo = 'zchee/deoplete-jedi'
