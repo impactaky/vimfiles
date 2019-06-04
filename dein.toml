@@ -3,7 +3,7 @@ repo = 'autozimu/LanguageClient-neovim'
 build = './install.sh'
 hook_add = '''
 	runtime plugin_conf/LanguageClient-neovim.vimrc
-	nnoremap g[ :Denite -mode=normal -auto-preview references<CR>
+	nnoremap g[ :Denite -auto-preview references<CR>
 	nnoremap g] :call LanguageClient#textDocument_definition()<CR>
 	nnoremap z[ :Denite documentSymbol<CR>
 	nnoremap gd :call LanguageClient#textDocument_hover()<CR>
@@ -49,10 +49,10 @@ repo = 'ozelentok/denite-gtags'
 lazy = 1
 on_source = 'denite.nvim'
 hook_add = '''
-	nnoremap g[ :Denite -mode=normal gtags_ref:<C-R><C-W><CR>
-	nnoremap g] :Denite -mode=normal gtags_def:<C-R><C-W><CR>
-	nnoremap s[ :Denite -mode=normal gtags_ref:
-	nnoremap s] :Denite -mode=normal gtags_def:
+	nnoremap g[ :Denite gtags_ref:<C-R><C-W><CR>
+	nnoremap g] :Denite gtags_def:<C-R><C-W><CR>
+	nnoremap s[ :Denite gtags_ref:
+	nnoremap s] :Denite gtags_def:
 '''
 
 [[plugins]]
@@ -201,8 +201,9 @@ lazy = 1
 depends = 'neomru.vim'
 hook_source = 'runtime plugin_conf/denite.nvim.vimrc'
 hook_add = '''
-	nnoremap zf :Denite file_rec -mode=insert<CR>
-	nnoremap <Leader>g :Denite -mode=normal grep<CR>
+	nnoremap <Leader>f :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
+	nnoremap zf :Denite file/rec<CR>
+	nnoremap <Leader>g :Denite grep<CR>
 	nnoremap zr :Denite -resume<CR>
 '''
 
@@ -227,7 +228,6 @@ on_source = ['deoplete.nvim']
 repo = 'Shougo/neomru.vim'
 lazy = 1
 hook_add = '''
-	nnoremap <Leader>f :exec buffer_name("%") == '' ? "Denite file_mru" : "Denite -default-action=tabopen file_mru"<CR>
 	nnoremap zd :Denite directory_mru<CR> 
 '''
 
