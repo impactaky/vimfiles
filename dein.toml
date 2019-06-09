@@ -90,6 +90,13 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'kana/vim-altr'
+hook_add = '''
+    nmap 'a <Plug>(altr-forward)
+    call altr#define('src/%.cpp', 'include/%.hpp')
+'''
+
+[[plugins]]
 repo = 'kana/vim-repeat'
 
 [[plugins]]
@@ -174,6 +181,9 @@ if   = "!has('nvim')"
 repo = 'rust-lang/rust.vim'
 lazy = 1
 on_ft = 'rust'
+
+[[plugins]]
+repo = 'sakhnik/nvim-gdb'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
