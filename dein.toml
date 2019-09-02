@@ -351,8 +351,8 @@ if   = "executable('w3m')"
 repo = 'zchee/deoplete-clang'
 lazy = 1
 hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
-on_ft = ['c', 'cpp', 'cmake']
-if = "get(g:, 'lsp_disable', 0)"
+on_ft = ['cmake']
+# if = "get(g:, 'lsp_disable', 0)"
 
 # [[plugins]]
 # repo = 'zchee/deoplete-jedi'
