@@ -4,8 +4,8 @@ let g:my_vim_dir = '$HOME/vimfiles'
 let mapleader = "'"
 
 " clang settings
-let g:my_libclang_path     = "/usr/lib/llvm-8/lib/libclang.so"
-let g:my_clang_include_dir = "/usr/lib/llvm-8/include/"
+let g:my_libclang_path     = "/usr/lib/llvm-9/lib/libclang.so"
+let g:my_clang_include_dir = "/usr/lib/llvm-9/include/"
 let g:my_clang_option = ''
 
 " vimproc

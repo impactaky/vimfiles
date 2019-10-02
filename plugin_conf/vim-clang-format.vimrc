@@ -1,4 +1,4 @@
-let g:clang_format#command = 'clang-format-8'
+let g:clang_format#command = 'clang-format-9'
 let g:clang_format#code_style = 'webkit'
 let g:clang_format#style_options = {
 \   'AlignAfterOpenBracket': 'true',
