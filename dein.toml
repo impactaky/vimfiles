@@ -3,7 +3,7 @@ repo = 'autozimu/LanguageClient-neovim'
 build = './install.sh'
 hook_add = '''
 	runtime plugin_conf/LanguageClient-neovim.vimrc
-	nnoremap g[ :Denite -auto-preview references<CR>
+	nnoremap g[ :Denite -auto-action='preview' references<CR>
 	nnoremap g] :call LanguageClient#textDocument_definition()<CR>
 	nnoremap z[ :Denite documentSymbol<CR>
 	nnoremap gd :call LanguageClient#textDocument_hover()<CR>
@@ -44,16 +44,16 @@ hook_add = "nnoremap <Leader>u :MundoToggle<CR>"
 [[plugins]]
 repo = 'linkinpark342/xonsh-vim'
 
-[[plugins]]
-repo = 'ozelentok/denite-gtags'
-lazy = 1
-on_source = 'denite.nvim'
-hook_add = '''
-	nnoremap g[ :Denite gtags_ref:<C-R><C-W><CR>
-	nnoremap g] :Denite gtags_def:<C-R><C-W><CR>
-	nnoremap s[ :Denite gtags_ref:
-	nnoremap s] :Denite gtags_def:
-'''
+# [[plugins]]
+# repo = 'ozelentok/denite-gtags'
+# lazy = 1
+# on_source = 'denite.nvim'
+# hook_add = '''
+# 	nnoremap g[ :Denite gtags_ref:<C-R><C-W><CR>
+# 	nnoremap g] :Denite gtags_def:<C-R><C-W><CR>
+# 	nnoremap s[ :Denite gtags_ref:
+# 	nnoremap s] :Denite gtags_def:
+# '''
 
 [[plugins]]
 repo = 'impactaky/denite-marionette'
@@ -285,6 +285,9 @@ repo = 'Shougo/vimshell.vim'
 lazy = 1
 hook_add = '''nnoremap <Leader>s :VimShellTab<CR>'''
 hook_source = 'runtime plugin_conf/vimshell.vim'
+
+[[plugins]]
+repo = 'skywind3000/asyncrun.vim'
 
 [[plugins]]
 repo = 'taku-o/vim-vis'
