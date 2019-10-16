@@ -288,6 +288,10 @@ hook_source = 'runtime plugin_conf/vimshell.vim'
 
 [[plugins]]
 repo = 'skywind3000/asyncrun.vim'
+hook_add = '''
+    runtime plugin_conf/asyncrun.vim.vimrc
+	nnoremap <silent> <Leader>r  :call QuickAsyncRun()<CR>
+'''
 
 [[plugins]]
 repo = 'taku-o/vim-vis'
@@ -300,7 +304,6 @@ repo = 'thinca/vim-prettyprint'
 repo = 'thinca/vim-quickrun'
 lazy = 1
 hook_add = '''
-	nnoremap <silent> <Leader>r  :QuickRun<CR>
 	runtime plugin_conf/vim-quickrun.vimrc
 '''
 
@@ -341,6 +344,9 @@ on_ft = 'cpp'
  
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'yssl/QFEnter'
 
 [[plugins]]
 repo = 'yuratomo/w3m.vim'

@@ -25,3 +25,9 @@ let g:my_build_directory = './'
 let g:my_python3_path     = "/usr/bin/python3"
 
 set guicursor=
+
+function! QuickGDB()
+    execute ':AsyncRun ~/vimfiles/script.sh ./a.out' expand('%') line('.') expand('<cword>')
+endfunction
+
+nnoremap 'e :call QuickGDB()<CR>
