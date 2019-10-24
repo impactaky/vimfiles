@@ -71,6 +71,13 @@ repo = 'impactaky/marionette-show.nvim'
 hook_add = 'runtime plugin_conf/marionette-show.nvim.vimrc'
 
 [[plugins]]
+repo = 'impactaky/quickgdb.vim'
+hook_add = '''
+nmap <Leader>r <Plug>(quickgdb-run)
+nmap <Leader>e <Plug>(quickgdb-printDebug)
+'''
+
+[[plugins]]
 repo = 'impactaky/radix.vim'
 hook_add = '''
 nmap <Space>b <Plug>(radix-toBin)
@@ -290,7 +297,6 @@ hook_source = 'runtime plugin_conf/vimshell.vim'
 repo = 'skywind3000/asyncrun.vim'
 hook_add = '''
     runtime plugin_conf/asyncrun.vim.vimrc
-	nnoremap <silent> <Leader>r  :call QuickAsyncRun()<CR>
 '''
 
 [[plugins]]

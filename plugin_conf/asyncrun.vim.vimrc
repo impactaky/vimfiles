@@ -6,10 +6,12 @@ augroup vimrc
                 \ | wincmd p
 augroup END
 
-function! QuickAsyncRun()
-    if exists('b:quick_async_run_command')
-        execute(printf('AsyncRun %s', b:quick_async_run_command))
-    else
-        execute(':QuickRun')
-    endif
-endfunction
+" function! QuickAsyncRun()
+"     if exists('g:quick_async_run_command')
+"         execute(printf('AsyncRun %s', g:quick_async_run_command))
+"     elseif exists('b:quick_async_run_command')
+"         execute(printf('AsyncRun %s', b:quick_async_run_command))
+"     else
+"         execute(':QuickRun')
+"     endif
+" endfunction

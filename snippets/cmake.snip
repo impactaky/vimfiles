@@ -1,0 +1,7 @@
+# Eigen setting
+snippet     _eigen
+options     head
+abbr        find_package etc...
+    find_package(Eigen3 ${1:REQUIRED})
+    include_directories(EIGEN3_INCLUDE_DIR)
+    target_link_libraries(${0:} Eigen3::Eigen)
