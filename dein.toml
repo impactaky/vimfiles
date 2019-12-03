@@ -134,11 +134,10 @@ hook_add = '''
 
 [[plugins]]
 repo = 'makerj/vim-transit'
-hook_source = 'runtime plugin_conf/vim-transit.vimrc'
 hook_add = '''
-	nmap <Leader>j vipJV:'<,'>TransItBlockPut<CR>kddVgq
-	let g:transit_src = 'en'
-	let g:transit_dst = 'ja'
+	nmap <Leader>j :call TransitSetEnglishToJapanese()<CR>vipJo<Esc>kV:'<,'>TransItBlockPut<CR>kddVgq
+	nmap <Leader>e :call TransitSetJapaneseToEnglish()<CR>vipJo<Esc>kV:'<,'>TransItBlockPut<CR>kddVgq
+    runtime plugin_conf/vim-transit.vimrc
 '''
 
 [[plugins]]
