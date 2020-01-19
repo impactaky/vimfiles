@@ -1,9 +1,15 @@
+
+function! SetupAsyncRun()
+    cclose
+    execute winwidth(0) * 2 < winheight(0) * 5 ?
+    \ printf("copen %d", winheight(0)/2) :
+    \ printf("vertical copen %d", winwidth(0)/2)
+    \ | wincmd p
+endfunction
+
 augroup vimrc
     autocmd User AsyncRunStart
-                \ execute winwidth(0) * 2 < winheight(0) * 5 ?
-                \ printf("copen %d", winheight(0)/2) :
-                \ printf("vertical copen %d", winwidth(0)/2)
-                \ | wincmd p
+                \ call SetupAsyncRun()
 augroup END
 
 " function! QuickAsyncRun()
