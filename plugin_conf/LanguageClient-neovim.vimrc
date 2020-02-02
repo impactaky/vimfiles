@@ -24,7 +24,7 @@ let g:LanguageClient_diagnosticsDisplay = {
 \        "signTexthl": "ALEWarningSign",
 \    },
 \}
-
+let g:LanguageClient_diagnosticsList='Location'
 
 " \ 'c': ['cquery', '--log-file=/tmp/cp.log', '--init={"cacheDirectory":"/tmp/cquery/"}'],
 " \ 'cpp': ['cquery', '--log-file=/tmp/cp.log', '--init={"cacheDirectory":"/tmp/cquery/"}'],

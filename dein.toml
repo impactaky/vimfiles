@@ -86,6 +86,12 @@ nmap <Space>x <Plug>(radix-toHex)
 '''
 
 [[plugins]]
+repo = 'impactaky/vim-toggle-quickfix'
+hook_add = '''
+    nmap gq <Plug>window:quickfix:loop
+'''
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = 'runtime plugin_conf/lightline.vim.vimrc'
 
@@ -147,6 +153,15 @@ repo = 'mindriot101/vim-yapf'
 repo = 'moznion/unite-git-conflict.vim'
 lazy = 1
 on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'neoclide/denite-extra'
+lazy = 1
+on_source = 'denite.nvim'
+hook_add = '''
+	nmap <Leader>q :Denite quickfix<CR>
+	nmap <Leader>l :Denite location_list<CR>
+'''
 
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
