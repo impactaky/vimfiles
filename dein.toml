@@ -56,6 +56,12 @@ repo = 'linkinpark342/xonsh-vim'
 # '''
 
 [[plugins]]
+repo = 'himanoa/denite-git-grep'
+lazy = 1
+on_source = 'denite.nvim'
+hook_add = 'nnoremap zg :Denite git-grep:'
+
+[[plugins]]
 repo = 'impactaky/denite-marionette'
 lazy = 1
 on_source = 'denite.nvim'
@@ -217,11 +223,6 @@ hook_source = 'runtime plugin_conf/nerdtree.vimrc'
 # lazy = 1
 # on_ft = 'rust'
 # hook_source = 'runtime plugin_conf/deoplete-rust.vimrc'
-
-[[plugins]]
-repo = 'sgur/unite-git_grep'
-lazy = 1
-on_source = 'unite.vim'
 
 [[plugins]]
 repo = 'Shougo/dein.vim'
