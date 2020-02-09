@@ -1,3 +1,4 @@
+let g:asyncrun_timer = 1000
 
 function! SetupAsyncRun()
     cclose
