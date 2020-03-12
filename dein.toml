@@ -211,6 +211,10 @@ on_ft = 'rust'
 
 [[plugins]]
 repo = 'sakhnik/nvim-gdb'
+rev = 'a6f90ff54e1e487381ee693c282a1b5610f590fc'
+hook_add = '''
+    let g:nvimgdb_disable_start_keymaps=1
+'''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
