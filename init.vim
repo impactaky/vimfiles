@@ -24,6 +24,15 @@ imap OD <Left>
 
 runtime! nvim_native.vimrc
 
+if filereadable("./.run_command.sh")
+    if filereadable("CMakeLists.txt") && isdirectory("build")
+        let g:quick_async_run_command='ninja -C build && sh -c "$(cat .run_command.sh)"'
+        let g:quick_async_run_command='ninja -C build && sh -c "$(cat .run_command.sh)"'
+    else
+        let g:quick_async_run_command='sh -c "$(cat .run_command.sh)"'
+    endif
+endif
+
 runtime! template.vimrc
 runtime! my_conf.vimrc
 " 1つ上のディレクトリのws.vimrcを読み込む
