@@ -12,6 +12,9 @@ hook_add = '''
 if = "!get(g:, 'lsp_disable', 0)"
 
 [[plugins]]
+repo = 'andymass/vim-matchup'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 
 [[plugins]]
@@ -65,12 +68,6 @@ hook_add = 'nnoremap zg :Denite git-grep:'
 repo = 'impactaky/denite-marionette'
 lazy = 1
 on_source = 'denite.nvim'
-
-[[plugins]]
-repo = 'impactaky/denite-rtags'
-lazy = 1
-on_source = 'denite.nvim'
-if = "!get(g:, 'rtags_disable', 0)"
 
 [[plugins]]
 repo = 'impactaky/marionette-show.nvim'
