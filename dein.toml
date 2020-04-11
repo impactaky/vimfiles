@@ -40,6 +40,23 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'google/vim-glaive'
+depends = 'google/vim-codefmt'
+merged = 0
+
+[[plugins]]
+repo = 'google/vim-maktaba'
+depends = 'google/vim-codefmt'
+merged = 0
+
+[[plugins]]
+repo = 'google/vim-codefmt'
+merged = 0
+hook_add = '''
+    nmap <Leader>f :FormatCode<CR>
+'''
+
+[[plugins]]
 repo = 'simnalamburt/vim-mundo'
 lazy = 1
 hook_add = "nnoremap <Leader>u :MundoToggle<CR>"
@@ -234,8 +251,8 @@ lazy = 1
 depends = 'neomru.vim'
 hook_source = 'runtime plugin_conf/denite.nvim.vimrc'
 hook_add = '''
-	nnoremap <Leader>f :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
-	nnoremap zf :Denite file/rec<CR>
+	nnoremap <Leader>n :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
+	nnoremap zn :Denite file/rec<CR>
 	nnoremap <Leader>g :Denite grep<CR>
 	nnoremap zr :Denite -resume<CR>
 '''
