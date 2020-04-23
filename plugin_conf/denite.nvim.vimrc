@@ -40,7 +40,7 @@ function! s:denite_my_settings() abort
     nnoremap <silent><buffer><expr> i
     \ denite#do_map('open_filter_buffer')
     nnoremap <silent><buffer><expr> <Space>
-    \ denite#do_map('toggle_select').j
+    \ denite#do_map('toggle_select')
     nnoremap <silent><buffer><expr> a
     \ denite#do_map('toggle_select_all')
 endfunction
