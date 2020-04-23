@@ -27,7 +27,6 @@ runtime! nvim_native.vimrc
 if filereadable("./.run_command.sh")
     if filereadable("CMakeLists.txt") && isdirectory("build")
         let g:quick_async_run_command='ninja -C build && sh -c "$(cat .run_command.sh)"'
-        let g:quick_async_run_command='ninja -C build && sh -c "$(cat .run_command.sh)"'
     else
         let g:quick_async_run_command='sh -c "$(cat .run_command.sh)"'
     endif
@@ -69,3 +68,4 @@ elseif has("win32")
 	set sh=powershell
 endif
 tnoremap <silent> <ESC> <C-\><C-n>
+

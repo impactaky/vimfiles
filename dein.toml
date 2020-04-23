@@ -1,6 +1,7 @@
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
-build = './install.sh'
+rev = 'next'
+build = 'bash ./install.sh'
 hook_add = '''
 	runtime plugin_conf/LanguageClient-neovim.vimrc
 	nnoremap g[ :Denite -auto-action='preview' references<CR>
@@ -338,6 +339,9 @@ repo = 'taku-o/vim-vis'
 
 [[plugins]]
 repo = 'thinca/vim-prettyprint'
+
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'

@@ -1,3 +1,27 @@
+function! DeniteRename(context)
+    let qflist = []
+    let target = a:context['targets'][0]
+    let filename = @%
+    execute ":edit ".target['action__path']
+    call cursor(target['action__line'], target['action__col'])
+    let word = expand("<cword>")
+    let name = input('Rename to : ')
+    for target in a:context['targets']
+        if !has_key(target, 'action__path') | continue | endif
+        if !has_key(target, 'action__line') | continue | endif
+        if !has_key(target, 'action__col')  | continue | endif
+        execute ":edit ".target['action__path']
+        let text = getline(target['action__line'])
+        let text_1 = text[0:target['action__col']-2]
+        let text_2 = text[target['action__col']-1:]
+        let text_2 = substitute(text_2, word, name, '')
+        call setline(target['action__line'], text_1.text_2)
+        update
+    endfor
+    execute ":edit ".filename
+endfunction
+call denite#custom#action('file', 'rename', function('DeniteRename'))
+
 " Define mappings
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
@@ -11,10 +35,14 @@ function! s:denite_my_settings() abort
     \ denite#do_map('do_action', 'preview')
     nnoremap <silent><buffer><expr> q
     \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> r
+    \ denite#do_map('do_action', 'rename')
     nnoremap <silent><buffer><expr> i
     \ denite#do_map('open_filter_buffer')
     nnoremap <silent><buffer><expr> <Space>
-    \ denite#do_map('toggle_select').'j'
+    \ denite#do_map('toggle_select').j
+    nnoremap <silent><buffer><expr> a
+    \ denite#do_map('toggle_select_all')
 endfunction
 " call denite#custom#map('insert','<Esc>','<denite:enter_mode:normal>','noremap')
 " call denite#custom#map('insert','<Down>','<denite:move_to_next_line>','noremap')

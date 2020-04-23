@@ -8,6 +8,7 @@ let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd-9'],
     \ 'c': ['clangd-9'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'nightly', 'rls'],
+    \ 'dockerfile' : ['docker-langserver', '--stdio'],
     \ }
 let g:LanguageClient_autoStart = 1
 
