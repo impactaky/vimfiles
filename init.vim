@@ -62,6 +62,9 @@ set t_Co=256
 set termguicolors
 runtime! colors_conf/iceberg.vimrc
 
+" ヘルプを日本語にする
+set helplang=ja
+
 if executable("zsh")
 	set sh=zsh
 elseif has("win32")
