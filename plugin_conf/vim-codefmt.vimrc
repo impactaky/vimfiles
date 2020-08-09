@@ -1,1 +1,1 @@
-Glaive codefmt clang_format_executable='clang-format-9'
+Glaive codefmt clang_format_executable='clang-format-10'

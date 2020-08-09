@@ -1,1 +1,1 @@
-let g:clang_format#command = 'clang-format-9'
+let g:clang_format#command = 'clang-format-10'

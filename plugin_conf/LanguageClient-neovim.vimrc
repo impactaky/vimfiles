@@ -5,8 +5,8 @@ set signcolumn=yes
 " let g:LanguageClient_hoverPreview = "Never"
 let g:LanguageClient_serverCommands = {
 	\ 'python': ['pyls'],
-    \ 'cpp': ['clangd-9'],
-    \ 'c': ['clangd-9'],
+    \ 'cpp': ['clangd-10'],
+    \ 'c': ['clangd-10'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'nightly', 'rls'],
     \ 'dockerfile' : ['docker-langserver', '--stdio'],
     \ }
