@@ -176,6 +176,15 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'mattn/emmet-vim'
+lazy = 1
+on_ft = 'html'
+hook_add = '''
+    imap <C-y><C-y> <plug>(emmet-expand-abbr)
+    nmap <C-y><C-y> <plug>(emmet-expand-abbr)
+'''
+
+[[plugins]]
 repo = 'mindriot101/vim-yapf'
 
 [[plugins]]
