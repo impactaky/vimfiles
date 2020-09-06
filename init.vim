@@ -71,4 +71,3 @@ elseif has("win32")
 	set sh=powershell
 endif
 tnoremap <silent> <ESC> <C-\><C-n>
-
