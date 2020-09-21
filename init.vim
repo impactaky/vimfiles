@@ -71,3 +71,21 @@ elseif has("win32")
 	set sh=powershell
 endif
 tnoremap <silent> <ESC> <C-\><C-n>
+
+let s:osc52_copy = {lines, regtype ->
+\ chansend(v:stderr, printf("\x1b]52;;%s\x1b\\", system("base64", join(lines, "\n"))))}
+let s:osc52_paste = {-> getreg('"', 1, 1)} " fallback
+let g:clipboard = {
+\   'name': 'osc52',
+\   'copy': {
+\     '+': s:osc52_copy,
+\     '*': s:osc52_copy,
+\   },
+\   'paste': {
+\     '+': s:osc52_paste,
+\     '*': s:osc52_paste,
+\   },
+\   'cache_enabled': 1,
+\ }
+
+set runtimepath^=$HOME/office/sandbox/github-url.vim
