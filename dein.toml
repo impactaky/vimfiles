@@ -88,6 +88,14 @@ lazy = 1
 on_source = 'denite.nvim'
 
 [[plugins]]
+repo = 'impactaky/github-url.vim'
+hook_add = '''
+let g:github_url#yank_command = "silent normal V:call OscYank()\<CR>"
+nmap gu <Plug>(github_url-file)
+vmap gu <Plug>(github_url-line)
+'''
+
+[[plugins]]
 repo = 'impactaky/marionette-show.nvim'
 hook_add = 'runtime plugin_conf/marionette-show.nvim.vimrc'
 
