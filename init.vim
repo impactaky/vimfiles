@@ -72,20 +72,13 @@ elseif has("win32")
 endif
 tnoremap <silent> <ESC> <C-\><C-n>
 
-let s:osc52_copy = {lines, regtype ->
-\ chansend(v:stderr, printf("\x1b]52;;%s\x1b\\", system("base64", join(lines, "\n"))))}
-let s:osc52_paste = {-> getreg('"', 1, 1)} " fallback
-let g:clipboard = {
-\   'name': 'osc52',
-\   'copy': {
-\     '+': s:osc52_copy,
-\     '*': s:osc52_copy,
-\   },
-\   'paste': {
-\     '+': s:osc52_paste,
-\     '*': s:osc52_paste,
-\   },
-\   'cache_enabled': 1,
-\ }
+function! OscYank() range
+    let tmp = @@
+    silent normal gvy
+    let selected_text = @@
+    let @@ = tmp
+    call chansend(v:stderr, printf("\x1b]52;;%s\x1b\\", system("base64", selected_text)))
+endfunction
+vmap <Leader>y :call OscYank()<CR>
 
 set runtimepath^=$HOME/office/sandbox/github-url.vim
