@@ -288,7 +288,7 @@ hook_add = '''
 	nnoremap <Leader>n :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
 	nnoremap zn :Denite file/rec<CR>
 	nnoremap <Leader>g :Denite grep<CR>
-	nnoremap zr :Denite -resume<CR>
+	nnoremap gr :Denite -resume<CR>
 '''
 
 [[plugins]]
