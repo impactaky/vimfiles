@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
+rev = 'd6fa84883300a686c13c003ecc145c5a020c33d9'
 build = 'bash ./install.sh'
 hook_add = '''
 	runtime plugin_conf/LanguageClient-neovim.vimrc
@@ -56,6 +56,9 @@ merged = 0
 hook_add = '''
     nmap <Leader>f :FormatCode<CR>
 '''
+
+[[plugins]]
+repo = 'gutenye/json5.vim'
 
 [[plugins]]
 repo = 'simnalamburt/vim-mundo'
@@ -161,8 +164,11 @@ repo = 'kana/vim-repeat'
 [[plugins]]
 repo = 'kana/vim-operator-user'
 
-[[plugins]]
-repo = 'kassio/neoterm'
+# [[plugins]]
+# repo = 'kassio/neoterm'
+# hook_add = '''
+# let g:neoterm_repl_python = ['python3']
+# '''
 
 [[plugins]]
 repo = 'kergoth/vim-bitbake'

@@ -80,3 +80,5 @@ function! OscYank() range
     call chansend(v:stderr, printf("\x1b]52;;%s\x1b\\", system("base64", selected_text)))
 endfunction
 vmap <Leader>y :call OscYank()<CR>
+
+au BufRead,BufNewFile *.json set filetype=json5
