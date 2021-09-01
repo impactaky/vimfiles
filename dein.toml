@@ -59,6 +59,11 @@ hook_add = '''
 
 [[plugins]]
 repo = 'gutenye/json5.vim'
+lazy = 1
+on_ft = 'json5'
+hook_add = '''
+    au BufRead,BufNewFile *.json set filetype=json5
+'''
 
 [[plugins]]
 repo = 'simnalamburt/vim-mundo'
@@ -109,6 +114,15 @@ vmap zj :call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
 vmap ze :call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
 nmap zj vip:call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
 nmap ze vip:call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
+'''
+
+[[plugins]]
+repo = 'impactaky/quick-print-debug.nvim'
+hook_add = '''
+nmap zl <Plug>(quick_print_debug_line)
+nmap zv <Plug>(quick_print_debug_value)
+nmap zr <Plug>(quick_print_debug_run)
+nmap zd <Plug>(quick_print_debug_delete)
 '''
 
 [[plugins]]
@@ -314,12 +328,12 @@ repo = 'Shougo/neco-syntax'
 lazy = 1
 on_source = ['deoplete.nvim']
 
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-lazy = 1
-hook_add = '''
-	nnoremap zd :Denite directory_mru<CR> 
-'''
+# [[plugins]]
+# repo = 'Shougo/neomru.vim'
+# lazy = 1
+# hook_add = '''
+# 	nnoremap zd :Denite directory_mru<CR>
+# '''
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
@@ -356,9 +370,6 @@ on_source = 'unite.vim'
 hook_add = '''
 	nnoremap <Leader>o :Unite outline<CR>
 '''
-
-[[plugins]]
-repo  = 'Shougo/vimproc.vim'
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'

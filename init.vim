@@ -1,10 +1,5 @@
 set fileencodings=utf-8,ucs-bom,euc-jp,eucjp-ms,cp932
-
-" set fileformats=dos,unix,mac
 set fileformats=unix,dos,mac
-
-" %機能の強化
-:runtime macros/matchit.vim
 
 " 全角スペースは赤くする
 augroup highlightIdegraphicSpace
@@ -30,6 +25,7 @@ if filereadable("./.run_command.sh")
     else
         let g:quick_async_run_command='sh -c "$(cat .run_command.sh)"'
     endif
+    let g:quick_print_debug#run_command="$(cat .run_command.sh)"
 endif
 
 runtime! template.vimrc
@@ -43,7 +39,6 @@ if filereadable("./local.vimrc")
 	source ./local.vimrc
 endif
 
-let g:vimproc#download_windows_dll = 1
 set runtimepath^=$HOME/.dein/repos/github.com/Shougo/dein.vim
 if dein#load_state("$HOME/.dein")
 	call dein#begin("$HOME/.dein")
@@ -80,5 +75,3 @@ function! OscYank() range
     call chansend(v:stderr, printf("\x1b]52;;%s\x1b\\", system("base64", selected_text)))
 endfunction
 vmap <Leader>y :call OscYank()<CR>
-
-au BufRead,BufNewFile *.json set filetype=json5
