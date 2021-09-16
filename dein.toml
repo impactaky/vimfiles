@@ -1,16 +1,20 @@
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'd6fa84883300a686c13c003ecc145c5a020c33d9'
-build = 'bash ./install.sh'
+repo = 'neovim/nvim-lspconfig'
 hook_add = '''
-	runtime plugin_conf/LanguageClient-neovim.vimrc
-	nnoremap g[ :Denite -auto-action='preview' references<CR>
-	nnoremap g] :call LanguageClient#textDocument_definition()<CR>
-	nnoremap z[ :Denite documentSymbol<CR>
-	nnoremap gd :call LanguageClient#textDocument_hover()<CR>
-	nnoremap <Space>r :call LanguageClient#textDocument_rename()<CR>
+	runtime! plugin_conf/nvim-lspconfig.lua
 '''
-if = "!get(g:, 'lsp_disable', 0)"
+
+# [[plugins]]
+# repo = 'dense-analysis/ale'
+
+# [[plugins]]
+# repo = 'nathanmsmith/nvim-ale-diagnostic'
+# lazy = 1
+# depends = 'dense-analysis/ale'
+# on_source = 'nvim-lspconfig'
+# hook_source = '''
+# 	runtime! plugin_conf/nvim-ale-diagnostic.lua
+# '''
 
 [[plugins]]
 repo = 'andymass/vim-matchup'
@@ -312,10 +316,28 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-lazy = 1
-on_i = 1
-hook_source = 'runtime plugin_conf/deoplete.nvim.vimrc'
+repo = 'Shougo/ddc.vim'
+on_event = 'InsertEnter'
+hook_source = 'runtime! plugin_conf/ddc.vim.vimrc'
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+[[plugins]]
+repo = 'Shougo/ddc-matcher_length'
+on_source = 'ddc.vim'
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+on_source = 'ddc.vim'
+[[plugins]]
+repo = 'Shougo/ddc-converter_remove_overlap'
+on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/echodoc.vim'
@@ -335,15 +357,15 @@ on_source = ['deoplete.nvim']
 # 	nnoremap zd :Denite directory_mru<CR>
 # '''
 
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-lazy = 1
-on_source = ['deoplete.nvim']
-hook_add = '''
-	imap <C-e> <Plug>(neosnippet_expand_or_jump)
-	smap <C-e> <Plug>(neosnippet_expand_or_jump)
-	runtime plugin_conf/neosnippet.vim.vimrc
-'''
+# [[plugins]]
+# repo = 'Shougo/neosnippet.vim'
+# lazy = 1
+# on_source = ['deoplete.nvim']
+# hook_add = '''
+# 	imap <C-e> <Plug>(neosnippet_expand_or_jump)
+# 	smap <C-e> <Plug>(neosnippet_expand_or_jump)
+# 	runtime plugin_conf/neosnippet.vim.vimrc
+# '''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -439,6 +461,9 @@ on_ft = 'cpp'
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
 repo = 'yssl/QFEnter'
 
 [[plugins]]
@@ -446,20 +471,20 @@ repo = 'yuratomo/w3m.vim'
 lazy = 1
 if   = "executable('w3m')"
 
-[[plugins]]
-repo = 'zchee/deoplete-clang'
-lazy = 1
-hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
-on_ft = ['cmake']
-# if = "get(g:, 'lsp_disable', 0)"
+# [[plugins]]
+# repo = 'zchee/deoplete-clang'
+# lazy = 1
+# hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
+# on_ft = ['cmake']
+# # if = "get(g:, 'lsp_disable', 0)"
 
 # [[plugins]]
 # repo = 'zchee/deoplete-jedi'
 # hook_source = 'runtime plugin_conf/deoplete-jedi.vimrc'
 # on_ft = ['python']
 
-[[plugins]]
-repo = 'zchee/deoplete-zsh'
-if   = "executable('zsh')"
-on_ft = ['sh', 'zsh']
-hook_source = 'runtime plugin_conf/deoplete-zsh.vimrc'
+# [[plugins]]
+# repo = 'zchee/deoplete-zsh'
+# if   = "executable('zsh')"
+# on_ft = ['sh', 'zsh']
+# hook_source = 'runtime plugin_conf/deoplete-zsh.vimrc'
