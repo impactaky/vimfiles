@@ -1,16 +1,29 @@
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'd6fa84883300a686c13c003ecc145c5a020c33d9'
-build = 'bash ./install.sh'
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
 hook_add = '''
-	runtime plugin_conf/LanguageClient-neovim.vimrc
-	nnoremap g[ :Denite -auto-action='preview' references<CR>
-	nnoremap g] :call LanguageClient#textDocument_definition()<CR>
-	nnoremap z[ :Denite documentSymbol<CR>
-	nnoremap gd :call LanguageClient#textDocument_hover()<CR>
-	nnoremap <Space>r :call LanguageClient#textDocument_rename()<CR>
+set signcolumn=yes
+let g:lsp_settings = {
+    \  'clangd': {'cmd': ['clangd-12']},
+    \  'efm-langserver': {'disabled': v:false}
+    \}
 '''
-if = "!get(g:, 'lsp_disable', 0)"
+
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+lazy = 1
+on_i = 1
+
+[[plugins]]
+repo = 'impactaky/denite-vim-lsp'
+lazy = 1
+on_source = 'denite.nvim'
+hook_add = '''
+    nnoremap g] :Denite -immediately-1 lsp_definition<CR>
+    nnoremap g[ :Denite -auto-action='preview' lsp_references<CR>
+'''
 
 [[plugins]]
 repo = 'andymass/vim-matchup'
