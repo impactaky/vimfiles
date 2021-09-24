@@ -25,6 +25,7 @@ set shortmess="aoOtTAIcF"
 set showbreak=+++\  
 set showfulltag
 set showmatch
+set signcolumn=yes
 set smartcase
 set smartindent
 set softtabstop=4
@@ -74,3 +75,7 @@ noremap <C-[> $
 " mark
 nnoremap '' '
 nnoremap "" "
+nnoremap mm m
+
+" q use as prefix
+nnoremap qq q

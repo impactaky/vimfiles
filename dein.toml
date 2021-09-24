@@ -2,16 +2,14 @@
 repo = 'impactaky/vim-lsp'
 rev = 'configurable_copen'
 hook_add = '''
-    let g:lsp_copen_command = "call denite#helper#call_denite('Denite', 'quickfix', -1, -1)"
     nnoremap g] :LspDefinition<CR>
     nnoremap g[ :LspReferences<CR>
-    nnoremap z[ :LspDocumentSymbol<CR>
+    nnoremap q[ :LspDocumentSymbol<CR>
 '''
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 hook_add = '''
-set signcolumn=yes
 let g:lsp_settings = {
     \  'clangd': {'cmd': ['clangd-12']},
     \  'efm-langserver': {'disabled': v:false}
@@ -99,7 +97,7 @@ repo = 'linkinpark342/xonsh-vim'
 repo = 'himanoa/denite-git-grep'
 lazy = 1
 on_source = 'denite.nvim'
-hook_add = 'nnoremap zg :Denite git-grep:'
+hook_add = 'nnoremap mg :Denite git-grep:'
 
 [[plugins]]
 repo = 'impactaky/denite-marionette'
@@ -121,19 +119,19 @@ hook_add = 'runtime plugin_conf/marionette-show.nvim.vimrc'
 [[plugins]]
 repo = 'impactaky/deepl.nvim'
 hook_add = '''
-vmap zj :call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
-vmap ze :call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
-nmap zj vip:call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
-nmap ze vip:call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
+vmap mj :call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
+vmap me :call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
+nmap mj vip:call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
+nmap me vip:call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
 '''
 
 [[plugins]]
 repo = 'impactaky/quick-print-debug.nvim'
 hook_add = '''
-nmap zl <Plug>(quick_print_debug_line)
-nmap zv <Plug>(quick_print_debug_value)
-nmap zr <Plug>(quick_print_debug_run)
-nmap zd <Plug>(quick_print_debug_delete)
+nmap ql <Plug>(quick_print_debug_line)
+nmap qv <Plug>(quick_print_debug_value)
+nmap qr <Plug>(quick_print_debug_run)
+nmap qd <Plug>(quick_print_debug_delete)
 '''
 
 [[plugins]]
@@ -317,7 +315,7 @@ lazy = 1
 hook_source = 'runtime plugin_conf/denite.nvim.vimrc'
 hook_add = '''
 	nnoremap <Leader>n :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
-	nnoremap zn :Denite file/rec<CR>
+	nnoremap mn :Denite file/rec<CR>
 	nnoremap <Leader>g :Denite grep<CR>
 	nnoremap gr :Denite -resume<CR>
 '''
@@ -339,12 +337,12 @@ repo = 'Shougo/neco-syntax'
 lazy = 1
 on_source = ['deoplete.nvim']
 
-# [[plugins]]
-# repo = 'Shougo/neomru.vim'
-# lazy = 1
-# hook_add = '''
-# 	nnoremap zd :Denite directory_mru<CR>
-# '''
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+lazy = 1
+hook_add = '''
+	nnoremap md :Denite directory_mru<CR>
+'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
