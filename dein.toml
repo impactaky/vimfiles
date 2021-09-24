@@ -1,5 +1,12 @@
 [[plugins]]
-repo = 'prabirshrestha/vim-lsp'
+repo = 'impactaky/vim-lsp'
+rev = 'configurable_copen'
+hook_add = '''
+    let g:lsp_copen_command = "call denite#helper#call_denite('Denite', 'quickfix', -1, -1)"
+    nnoremap g] :LspDefinition<CR>
+    nnoremap g[ :LspReferences<CR>
+    nnoremap z[ :LspDocumentSymbol<CR>
+'''
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
@@ -15,15 +22,6 @@ let g:lsp_settings = {
 repo = 'lighttiger2505/deoplete-vim-lsp'
 lazy = 1
 on_i = 1
-
-[[plugins]]
-repo = 'impactaky/denite-vim-lsp'
-lazy = 1
-on_source = 'denite.nvim'
-hook_add = '''
-    nnoremap g] :Denite -immediately-1 lsp_definition<CR>
-    nnoremap g[ :Denite -auto-action='preview' lsp_references<CR>
-'''
 
 [[plugins]]
 repo = 'andymass/vim-matchup'
