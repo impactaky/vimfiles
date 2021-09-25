@@ -2,9 +2,10 @@
 repo = 'impactaky/vim-lsp'
 rev = 'configurable_copen'
 hook_add = '''
+    let g:lsp_copen_command = "call denite#helper#call_denite('Denite', 'quickfix', -1, -1)"
     nnoremap g] :LspDefinition<CR>
     nnoremap g[ :LspReferences<CR>
-    nnoremap q[ :LspDocumentSymbol<CR>
+    nnoremap <Leader>o :LspDocumentSymbol<CR>
 '''
 
 [[plugins]]
@@ -19,7 +20,16 @@ let g:lsp_settings = {
 [[plugins]]
 repo = 'lighttiger2505/deoplete-vim-lsp'
 lazy = 1
-on_i = 1
+on_source = ['deoplete.nvim']
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_add = '''
+    set foldlevel=99
+	set foldmethod=expr
+	set foldexpr=nvim_treesitter#foldexpr()
+    runtime plugin_conf/nvim-treesitter.lua
+'''
 
 [[plugins]]
 repo = 'andymass/vim-matchup'
@@ -50,23 +60,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'google/vim-glaive'
-depends = 'google/vim-codefmt'
-merged = 0
-
-[[plugins]]
-repo = 'google/vim-maktaba'
-depends = 'google/vim-codefmt'
-merged = 0
-
-[[plugins]]
-repo = 'google/vim-codefmt'
-merged = 0
-hook_add = '''
-    nmap <Leader>f :FormatCode<CR>
-'''
-
-[[plugins]]
 repo = 'gutenye/json5.vim'
 lazy = 1
 on_ft = 'json5'
@@ -82,17 +75,6 @@ hook_add = "nnoremap <Leader>u :MundoToggle<CR>"
 [[plugins]]
 repo = 'linkinpark342/xonsh-vim'
 
-# [[plugins]]
-# repo = 'ozelentok/denite-gtags'
-# lazy = 1
-# on_source = 'denite.nvim'
-# hook_add = '''
-# 	nnoremap g[ :Denite gtags_ref:<C-R><C-W><CR>
-# 	nnoremap g] :Denite gtags_def:<C-R><C-W><CR>
-# 	nnoremap s[ :Denite gtags_ref:
-# 	nnoremap s] :Denite gtags_def:
-# '''
-
 [[plugins]]
 repo = 'himanoa/denite-git-grep'
 lazy = 1
@@ -100,29 +82,20 @@ on_source = 'denite.nvim'
 hook_add = 'nnoremap mg :Denite git-grep:'
 
 [[plugins]]
-repo = 'impactaky/denite-marionette'
-lazy = 1
-on_source = 'denite.nvim'
-
-[[plugins]]
 repo = 'impactaky/github-url.vim'
 hook_add = '''
 let g:github_url#yank_command = "silent normal V:call OscYank()\<CR>"
-nmap gu <Plug>(github_url-file)
-vmap gu <Plug>(github_url-line)
+nmap ;u <Plug>(github_url-file)
+vmap ;u <Plug>(github_url-line)
 '''
-
-[[plugins]]
-repo = 'impactaky/marionette-show.nvim'
-hook_add = 'runtime plugin_conf/marionette-show.nvim.vimrc'
 
 [[plugins]]
 repo = 'impactaky/deepl.nvim'
 hook_add = '''
-vmap mj :call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
-vmap me :call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
-nmap mj vip:call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
-nmap me vip:call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
+vmap <Leader>j :call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
+vmap <Leader>e :call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
+nmap <Leader>j vip:call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
+nmap <Leader>e vip:call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
 '''
 
 [[plugins]]
@@ -138,7 +111,6 @@ nmap qd <Plug>(quick_print_debug_delete)
 repo = 'impactaky/quickgdb.vim'
 hook_add = '''
 nmap <Leader>r <Plug>(quickgdb-run)
-nmap <Leader>e <Plug>(quickgdb-printDebug)
 '''
 
 [[plugins]]
@@ -152,7 +124,7 @@ nmap <Space>x <Plug>(radix-toHex)
 [[plugins]]
 repo = 'impactaky/vim-toggle-quickfix'
 hook_add = '''
-    nmap gq <Plug>window:quickfix:loop
+    nmap ;q <Plug>window:quickfix:loop
 '''
 
 [[plugins]]
@@ -170,15 +142,8 @@ hook_add = 'runtime plugin_conf/lightline.vim.vimrc'
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
 hook_add = '''
-	nmap <silent> ga <Plug>(EasyAlign)
-	vmap <silent> ga <Plug>(EasyAlign)
-'''
-
-[[plugins]]
-repo = 'kana/vim-altr'
-hook_add = '''
-    nmap 'a <Plug>(altr-forward)
-    call altr#define('src/%.cpp', 'include/%.hpp')
+	nmap <silent> 'a <Plug>(EasyAlign)
+	vmap <silent> 'a <Plug>(EasyAlign)
 '''
 
 [[plugins]]
@@ -213,14 +178,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'makerj/vim-transit'
-hook_add = '''
-	nmap <Leader>j :call TransitSetEnglishToJapanese()<CR>vipJo<Esc>kV:'<,'>TransItBlockPut<CR>kddVgq
-	nmap <Leader>e :call TransitSetJapaneseToEnglish()<CR>vipJo<Esc>kV:'<,'>TransItBlockPut<CR>kddVgq
-    runtime plugin_conf/vim-transit.vimrc
-'''
-
-[[plugins]]
 repo = 'mattn/emmet-vim'
 lazy = 1
 on_ft = 'html'
@@ -228,14 +185,6 @@ hook_add = '''
     imap <C-y><C-y> <plug>(emmet-expand-abbr)
     nmap <C-y><C-y> <plug>(emmet-expand-abbr)
 '''
-
-[[plugins]]
-repo = 'mindriot101/vim-yapf'
-
-[[plugins]]
-repo = 'moznion/unite-git-conflict.vim'
-lazy = 1
-on_source = 'unite.vim'
 
 [[plugins]]
 repo = 'neoclide/denite-extra'
@@ -270,18 +219,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'rhysd/vim-clang-format'
-hook_add = 'runtime plugin_conf/vim-clang-format.vimrc'
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-if   = "!has('nvim')"
-
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-if   = "!has('nvim')"
-
-[[plugins]]
 repo = 'rust-lang/rust.vim'
 lazy = 1
 on_ft = 'rust'
@@ -299,12 +236,6 @@ lazy = 1
 hook_add = '''nnoremap <silent> <Leader>t :NERDTreeToggle<CR>'''
 hook_source = 'runtime plugin_conf/nerdtree.vimrc'
 
-# [[plugins]]
-# repo = 'sebastianmarkow/deoplete-rust'
-# lazy = 1
-# on_ft = 'rust'
-# hook_source = 'runtime plugin_conf/deoplete-rust.vimrc'
-
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -314,8 +245,8 @@ lazy = 1
 # depends = 'neomru.vim'
 hook_source = 'runtime plugin_conf/denite.nvim.vimrc'
 hook_add = '''
-	nnoremap <Leader>n :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
-	nnoremap mn :Denite file/rec<CR>
+	nnoremap <Leader>f :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
+	nnoremap mf :Denite file/rec<CR>
 	nnoremap <Leader>g :Denite grep<CR>
 	nnoremap gr :Denite -resume<CR>
 '''
@@ -360,33 +291,6 @@ lazy = 1
 on_source = 'neosnippet.vim'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-lazy = 1
-
-[[plugins]]
-repo = 'Shougo/unite-build'
-lazy = 1
-on_source = 'unite.vim'
-hook_add = '''
-	nnoremap <Leader>b :execute(join(['Unite build:make:--directory=', g:my_build_directory], ''))<CR>
-	nnoremap <Leader>B :UniteResume build<CR>
-'''
-
-[[plugins]]
-repo = 'Shougo/unite-outline'
-lazy = 1
-on_source = 'unite.vim'
-hook_add = '''
-	nnoremap <Leader>o :Unite outline<CR>
-'''
-
-[[plugins]]
-repo = 'Shougo/vimshell.vim'
-lazy = 1
-hook_add = '''nnoremap <Leader>s :VimShellTab<CR>'''
-hook_source = 'runtime plugin_conf/vimshell.vim'
-
-[[plugins]]
 repo = 'skywind3000/asyncrun.vim'
 hook_add = '''
     runtime plugin_conf/asyncrun.vim.vimrc
@@ -410,11 +314,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'thinca/vim-unite-history'
-lazy = 1
-on_source = 'unite.vim'
-
-[[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = '''
 	nnoremap <silent> <Leader>c  :TComment<CR>
@@ -433,11 +332,6 @@ hook_add = '''
 		\  "args": ["{browser}", "{uri}"]},
 	\]
 '''
-
-[[plugins]]
-repo = 'ujihisa/unite-launch'
-lazy = 1
-on_source = 'unite.vim'
 
 [[plugins]]
 repo = 'vim-jp/cpp-vim'
@@ -461,11 +355,6 @@ lazy = 1
 hook_source = 'runtime plugin_conf/deoplete-clang.vimrc'
 on_ft = ['cmake']
 # if = "get(g:, 'lsp_disable', 0)"
-
-# [[plugins]]
-# repo = 'zchee/deoplete-jedi'
-# hook_source = 'runtime plugin_conf/deoplete-jedi.vimrc'
-# on_ft = ['python']
 
 [[plugins]]
 repo = 'zchee/deoplete-zsh'
