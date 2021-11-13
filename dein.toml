@@ -132,7 +132,7 @@ repo = 'impactaky/xonsh2py.nvim'
 lazy = 1
 on_ft = ['xonsh', 'python']
 hook_add = '''
-    nmap <Leader>p <Plug>(xonsh2py)
+    nmap ;p <Plug>(xonsh2py)
 '''
 
 [[plugins]]
@@ -249,6 +249,8 @@ hook_add = '''
 	nnoremap mf :Denite file/rec<CR>
 	nnoremap <Leader>g :Denite grep<CR>
 	nnoremap gr :Denite -resume<CR>
+    nnoremap <Leader>n :Denite -resume -cursor-pos=+1 -immediately
+    nnoremap <Leader>p :Denite -resume -cursor-pos=-1 -immediately
 '''
 
 [[plugins]]
