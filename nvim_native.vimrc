@@ -1,7 +1,7 @@
 set background=dark
 set browsedir=current
 set clipboard+=unnamedplus
-set completeopt="menu"
+set completeopt=menuone
 set confirm
 set cursorline
 set diffopt="filler, iwhite, vertical"

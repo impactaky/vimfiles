@@ -18,9 +18,33 @@ let g:lsp_settings = {
 '''
 
 [[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
-lazy = 1
-on_source = ['deoplete.nvim']
+repo = 'Shougo/pum.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+on_event = 'InsertEnter'
+hook_source = 'runtime! plugin_conf/ddc.vim.vimrc'
+depends = ['denops.vim']
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'shun/ddc-vim-lsp'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-converter_remove_overlap'
+on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
@@ -254,12 +278,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-lazy = 1
-on_i = 1
-hook_source = 'runtime plugin_conf/deoplete.nvim.vimrc'
-
-[[plugins]]
 repo = 'Shougo/echodoc.vim'
 hook_add = '''
     autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -342,6 +360,9 @@ on_ft = 'cpp'
  
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
 
 [[plugins]]
 repo = 'yssl/QFEnter'
