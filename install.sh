@@ -10,3 +10,4 @@ cp ./template.vimrc ./my_conf.vimrc
 
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh ./installer.sh $HOME/.dein
+curl -fsSL https://deno.land/x/install/install.sh | sh
