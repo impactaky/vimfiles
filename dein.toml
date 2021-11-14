@@ -25,7 +25,7 @@ repo = 'Shougo/pum.vim'
 repo = 'Shougo/ddc.vim'
 on_event = 'InsertEnter'
 hook_source = 'runtime! plugin_conf/ddc.vim.vimrc'
-depends = ['denops.vim']
+depends = ['denops.vim', 'pum.vim']
 
 [[plugins]]
 repo = 'Shougo/ddc-around'
@@ -297,19 +297,17 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
+repo = 'Shougo/deoppet.nvim'
 lazy = 1
-on_source = ['deoplete.nvim']
-hook_add = '''
-	imap <C-e> <Plug>(neosnippet_expand_or_jump)
-	smap <C-e> <Plug>(neosnippet_expand_or_jump)
-	runtime plugin_conf/neosnippet.vim.vimrc
+depends = ['neosnippet-snippets']
+on_source = 'ddc.vim'
+on_event = 'InsertEnter'
+hook_source = '''
+    runtime !plugin_conf/deoppet.nvim.vimrc
 '''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
-lazy = 1
-on_source = 'neosnippet.vim'
 
 [[plugins]]
 repo = 'skywind3000/asyncrun.vim'

@@ -11,10 +11,12 @@
 "       \ })
 " call ddc#enable()
 
-call ddc#custom#patch_global('sources', ['vim-lsp', 'around'])
+call ddc#custom#patch_global('sources', ['deoppet', 'vim-lsp', 'around'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': { 'matchers': ['matcher_head'], 'sorters': ['sorter_rank'], },
+      \ 'deoppet': {'mark': 'dp', 'dup': v:true},
       \ 'vim-lsp': { 'mark': 'lsp' },
+      \ 'around': { 'mark': 'A' },
       \ })
 
 call ddc#custom#patch_global('autoCompleteEvents', [
@@ -29,6 +31,23 @@ call ddc#custom#patch_global('sourceParams', {
       \ })
 call ddc#enable()
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <C-n>
+      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#manual_complete()
+inoremap <C-c>   <Cmd>call pum#map#cancel()<CR>
+inoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
+inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+inoremap <PageDown> <Cmd>call pum#map#insert_relative_page(+1)<CR>
+inoremap <PageUp>   <Cmd>call pum#map#insert_relative_page(-1)<CR>
+
+
+imap <C-e> <plug>(deoppet_expand)
+imap <C-f> <plug>(deoppet_jump_forward)
+imap <C-b> <plug>(deoppet_jump_backward)
+smap <C-f> <plug>(deoppet_jump_forward)
+smap <C-b> <plug>(deoppet_jump_backward)
+xmap <C-l> <plug>(deoppet_select_text)
+xmap <C-x> <plug>(deoppet_cut_text)
