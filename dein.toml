@@ -5,6 +5,7 @@ hook_add = '''
     let g:lsp_copen_command = "call denite#helper#call_denite('Denite', 'quickfix', -1, -1)"
     nnoremap g] :LspDefinition<CR>
     nnoremap g[ :LspReferences<CR>
+    nnoremap <Leader>f :LspDocumentFormat<CR>
     nnoremap <Leader>o :LspDocumentSymbol<CR>
 '''
 
@@ -269,7 +270,7 @@ lazy = 1
 # depends = 'neomru.vim'
 hook_source = 'runtime plugin_conf/denite.nvim.vimrc'
 hook_add = '''
-	nnoremap <Leader>f :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
+	nnoremap :f :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
 	nnoremap mf :Denite file/rec<CR>
 	nnoremap <Leader>g :Denite grep<CR>
 	nnoremap gr :Denite -resume<CR>
