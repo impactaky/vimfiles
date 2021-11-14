@@ -270,7 +270,7 @@ lazy = 1
 # depends = 'neomru.vim'
 hook_source = 'runtime plugin_conf/denite.nvim.vimrc'
 hook_add = '''
-	nnoremap :f :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
+	nnoremap ;f :exec buffer_name("%") == '' ? "Denite file/old" : "Denite -default-action=tabopen file/old"<CR>
 	nnoremap mf :Denite file/rec<CR>
 	nnoremap <Leader>g :Denite grep<CR>
 	nnoremap gr :Denite -resume<CR>
@@ -303,7 +303,7 @@ depends = ['neosnippet-snippets']
 on_source = 'ddc.vim'
 on_event = 'InsertEnter'
 hook_source = '''
-    runtime !plugin_conf/deoppet.nvim.vimrc
+    runtime plugin_conf/deoppet.nvim.vimrc
 '''
 
 [[plugins]]
