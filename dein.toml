@@ -23,28 +23,39 @@ repo = 'Shougo/pum.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc.vim'
+lazy = 1
 on_event = 'InsertEnter'
 hook_source = 'runtime! plugin_conf/ddc.vim.vimrc'
 depends = ['denops.vim', 'pum.vim']
 
 [[plugins]]
 repo = 'Shougo/ddc-around'
+lazy = 1
 on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc-matcher_head'
+lazy = 1
 on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc-sorter_rank'
+lazy = 1
 on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'shun/ddc-vim-lsp'
+lazy = 1
 on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc-converter_remove_overlap'
+lazy = 1
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-zsh'
+lazy = 1
 on_source = 'ddc.vim'
 
 [[plugins]]
@@ -201,6 +212,11 @@ hook_add = '''
 	nmap <C-n> <Plug>(yankround-next)
 	nmap <C-p> <Plug>(yankround-prev)
 '''
+
+[[plugins]]
+repo = 'LumaKernel/ddc-file'
+lazy = 1
+on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
