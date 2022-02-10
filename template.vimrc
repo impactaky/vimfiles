@@ -17,6 +17,11 @@ let g:my_build_directory = './'
 " \}
 
 " python3
-let g:my_python3_path     = "/usr/bin/python3"
+if executable('lsb_release')
+    let pyenv_dir = $HOME."/.config/nvim_".trim(system('lsb_release -rs'))
+    if isdirectory(pyenv_dir)
+        let g:python3_host_prog = pyenv_dir."/bin/python3"
+    endif
+endif
 
 set guicursor=
