@@ -1,21 +1,14 @@
 [[plugins]]
-repo = 'impactaky/vim-lsp'
-rev = 'configurable_copen'
-hook_add = '''
-    let g:lsp_copen_command = "call denite#helper#call_denite('Denite', 'quickfix', -1, -1)"
-    nnoremap g] :LspDefinition<CR>
-    nnoremap g[ :LspReferences<CR>
-    nnoremap <Leader>f :LspDocumentFormat<CR>
-    nnoremap <Leader>o :LspDocumentSymbol<CR>
-'''
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-hook_add = '''
-let g:lsp_settings = {
-    \  'clangd': {'cmd': [g:my_clangd]},
-    \  'efm-langserver': {'disabled': v:false}
-    \}
+repo = 'neovim/nvim-lspconfig'
+on_event = 'BufEnter'
+hook_source= '''
+lua << EOF
+require('lspconfig').clangd.setup {
+        cmd = {
+            "clangd-12",
+        },
+}
+EOF
 '''
 
 [[plugins]]
@@ -48,7 +41,7 @@ repo = 'Shougo/ddc-ui-native'
 on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'shun/ddc-vim-lsp'
+repo = 'Shougo/ddc-nvim-lsp'
 lazy = 1
 on_source = 'ddc.vim'
 
