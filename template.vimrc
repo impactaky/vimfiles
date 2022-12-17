@@ -7,6 +7,7 @@ let mapleader = "'"
 let g:my_libclang_path     = "/usr/lib/llvm-10/lib/libclang.so"
 let g:my_clang_include_dir = "/usr/lib/llvm-10/include/"
 let g:my_clang_option = ''
+let g:my_clangd = "clangd-12"
 
 set undodir=$HOME/vimfiles/undo
 

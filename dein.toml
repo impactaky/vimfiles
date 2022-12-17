@@ -13,7 +13,7 @@ hook_add = '''
 repo = 'mattn/vim-lsp-settings'
 hook_add = '''
 let g:lsp_settings = {
-    \  'clangd': {'cmd': ['clangd-12']},
+    \  'clangd': {'cmd': [g:my_clangd]},
     \  'efm-langserver': {'disabled': v:false}
     \}
 '''
@@ -62,8 +62,8 @@ on_source = 'ddc.vim'
 repo = 'nvim-treesitter/nvim-treesitter'
 hook_add = '''
     set foldlevel=99
-	set foldmethod=expr
-	set foldexpr=nvim_treesitter#foldexpr()
+    set foldmethod=expr
+    set foldexpr=nvim_treesitter#foldexpr()
     runtime plugin_conf/nvim-treesitter.lua
 '''
 
