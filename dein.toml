@@ -2,13 +2,7 @@
 repo = 'neovim/nvim-lspconfig'
 on_event = 'BufEnter'
 hook_source= '''
-lua << EOF
-require('lspconfig').clangd.setup {
-        cmd = {
-            "clangd-12",
-        },
-}
-EOF
+runtime plugin_conf/nvim-lspconfig.lua
 '''
 
 [[plugins]]
