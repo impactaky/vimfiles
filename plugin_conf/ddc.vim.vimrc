@@ -11,7 +11,7 @@
 "       \ })
 " call ddc#enable()
 
-call ddc#custom#patch_global('sources', ['deoppet', 'vim-lsp', 'file', 'around'])
+call ddc#custom#patch_global('sources', ['vim-lsp', 'file', 'around'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': { 'matchers': ['matcher_head'], 'sorters': ['sorter_rank'], 'converters': ['converter_remove_overlap'] },
       \ 'around': { 'mark': 'A' },
@@ -20,6 +20,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'vim-lsp': { 'mark': 'lsp' },
       \ 'zsh': { 'mark': 'zsh' },
       \ })
+call ddc#custom#patch_global('ui', 'native')
 
 call ddc#custom#patch_filetype(['zsh', 'sh', 'bash'], 'sources', ['deoppet', 'zsh', 'file', 'around'])
 
