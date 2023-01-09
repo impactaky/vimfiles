@@ -15,14 +15,13 @@ call ddc#custom#patch_global('sources', ['nvim-lsp', 'file', 'around'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': { 'matchers': ['matcher_head'], 'sorters': ['sorter_rank'], 'converters': ['converter_remove_overlap'] },
       \ 'around': { 'mark': 'A' },
-      \ 'deoppet': { 'mark': 'dp', 'dup': v:true},
       \ 'file': { 'mark': 'F', 'isVolatile': v:true, 'forceCompletionPattern': '\S/\S*' },
       \ 'nvim-lsp': { 'mark': 'lsp' },
       \ 'zsh': { 'mark': 'zsh' },
       \ })
 call ddc#custom#patch_global('ui', 'native')
 
-call ddc#custom#patch_filetype(['zsh', 'sh', 'bash'], 'sources', ['deoppet', 'zsh', 'file', 'around'])
+call ddc#custom#patch_filetype(['zsh', 'sh', 'bash'], 'sources', ['zsh', 'file', 'around'])
 
 call ddc#custom#patch_global('autoCompleteEvents', [
     \ 'InsertEnter', 'TextChangedI', 'TextChangedP',

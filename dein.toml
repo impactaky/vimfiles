@@ -310,16 +310,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/deoppet.nvim'
-lazy = 1
-depends = ['neosnippet-snippets']
-on_source = 'ddc.vim'
-on_event = 'InsertEnter'
-hook_source = '''
-    runtime plugin_conf/deoppet.nvim.vimrc
-'''
-
-[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
