@@ -216,6 +216,9 @@ lazy = 1
 on_source = 'ddc.vim'
 
 [[plugins]]
+repo = 'matsui54/denite-nvim-lsp'
+
+[[plugins]]
 repo = 'mattn/emmet-vim'
 lazy = 1
 on_ft = 'html'
@@ -365,6 +368,12 @@ repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'weilbith/nvim-lsp-denite'
+hook_add = '''
+nmap g[ :Denite lsp_references<CR>
+'''
 
 [[plugins]]
 repo = 'yssl/QFEnter'
