@@ -21,6 +21,19 @@ runtime plugin_conf/nvim-lspconfig.lua
 '''
 
 [[plugins]]
+repo = 'simrat39/rust-tools.nvim'
+lazy = 1
+on_source = 'nvim-lspconfig'
+hook_source= '''
+lua << EOF
+require("rust-tools").setup({
+  server = {
+  },
+})
+EOF
+'''
+
+[[plugins]]
 repo = 'Shougo/pum.vim'
 
 [[plugins]]
