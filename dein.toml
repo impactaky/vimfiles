@@ -408,3 +408,6 @@ repo = 'zchee/deoplete-zsh'
 if   = "executable('zsh')"
 on_ft = ['sh', 'zsh']
 hook_source = 'runtime plugin_conf/deoplete-zsh.vimrc'
+
+[[plugins]]
+repo = 'ziglang/zig.vim'
