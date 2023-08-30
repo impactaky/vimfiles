@@ -7,6 +7,5 @@ ln -s $current_dir/.gvimrc $HOME/.gvimrc
 ln -s $current_dir/ $HOME/.vim
 ln -s $current_dir/ $HOME/.config/nvim
 
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh $HOME/.dein
+git clone https://github.com/Shougo/dein.vim "$HOME"/.dein/repos/github.com/Shougo/dein.vim
 curl -fsSL https://deno.land/x/install/install.sh | sh
