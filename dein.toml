@@ -106,6 +106,15 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'goerz/jupytext.vim'
+hook_add = '''
+let g:jupytext_fmt='py'
+'''
+
+# [[plugins]]
+# repo = 'github/copilot.vim'
+
+[[plugins]]
 repo = 'gutenye/json5.vim'
 lazy = 1
 on_ft = 'json5'
