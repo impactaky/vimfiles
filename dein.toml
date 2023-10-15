@@ -208,17 +208,6 @@ lazy = 1
 on_source = 'unite.vim'
 
 [[plugins]]
-repo = 'LeafCage/yankround.vim'
-hook_add = '''
-	nmap gp <Plug>(yankround-gp)
-	nmap gP <Plug>(yankround-gP)
-	nmap p <Plug>(yankround-p)
-	nmap P <Plug>(yankround-P)
-	nmap <C-n> <Plug>(yankround-next)
-	nmap <C-p> <Plug>(yankround-prev)
-'''
-
-[[plugins]]
 repo = 'LumaKernel/ddc-file'
 lazy = 1
 on_source = 'ddc.vim'

@@ -78,3 +78,10 @@ function! OscYank() range
     call chansend(v:stderr, printf("\x1b]52;;%s\x1b\\", system("base64", selected_text)))
 endfunction
 vmap <Leader>y :call OscYank()<CR>
+
+if exists('g:vscode')
+    nmap g] gd
+    nmap g[ gH
+    nmap <Leader>c <C-/>
+    xmap <Leader>c <C-/>
+endif
