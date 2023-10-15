@@ -42,7 +42,10 @@ endif
 set runtimepath^=$HOME/.dein/repos/github.com/Shougo/dein.vim
 if dein#load_state("$HOME/.dein")
 	call dein#begin("$HOME/.dein")
-	call dein#load_toml("$HOME/vimfiles/dein.toml")
+    call dein#load_toml("$HOME/vimfiles/common.toml")
+    if !exists('g:vscode')
+        call dein#load_toml("$HOME/vimfiles/dein.toml")
+    endif
 	if filereadable(expand("$HOME/vimfiles/local_dein.toml"))
 		call dein#load_toml("$HOME/vimfiles/local_dein.toml")
 	endif

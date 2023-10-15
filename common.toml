@@ -1,0 +1,25 @@
+[[plugins]]
+repo = 'impactaky/radix.vim'
+hook_add = '''
+nmap <Space>b <Plug>(radix-toBin)
+nmap <Space>d <Plug>(radix-toDec)
+nmap <Space>x <Plug>(radix-toHex)
+'''
+
+[[plugins]]
+repo = 'kana/vim-repeat'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+hook_add = '''
+    runtime plugin_conf/accelerated-jk.vim
+	nmap j <Plug>(accelerated_jk_j)
+	nmap k <Plug>(accelerated_jk_k)
+'''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+

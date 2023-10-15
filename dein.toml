@@ -169,14 +169,6 @@ nmap <Leader>r <Plug>(quickgdb-run)
 '''
 
 [[plugins]]
-repo = 'impactaky/radix.vim'
-hook_add = '''
-nmap <Space>b <Plug>(radix-toBin)
-nmap <Space>d <Plug>(radix-toDec)
-nmap <Space>x <Plug>(radix-toHex)
-'''
-
-[[plugins]]
 repo = 'impactaky/vim-toggle-quickfix'
 hook_add = '''
     nmap ;q <Plug>window:quickfix:loop
@@ -200,12 +192,6 @@ hook_add = '''
 	nmap <silent> ga <Plug>(EasyAlign)
 	vmap <silent> ga <Plug>(EasyAlign)
 '''
-
-[[plugins]]
-repo = 'kana/vim-repeat'
-
-[[plugins]]
-repo = 'kana/vim-operator-user'
 
 # [[plugins]]
 # repo = 'kassio/neoterm'
@@ -271,14 +257,6 @@ repo = 'pocari/vim-denite-kind-open-browser'
 repo = 'ryanoasis/vim-devicons'
 hook_add = '''
 	runtime plugin_conf/vim-devicons.vimrc
-'''
-
-[[plugins]]
-repo = 'rhysd/accelerated-jk'
-hook_add = '''
-    runtime plugin_conf/accelerated-jk.vim
-	nmap j <Plug>(accelerated_jk_j)
-	nmap k <Plug>(accelerated_jk_k)
 '''
 
 [[plugins]]
@@ -367,9 +345,6 @@ hook_add = '''
 	vnoremap <silent> <expr> <Leader>c mode() == '<C-v>' ? ':TCommentInline<CR>' : ':TCommentMaybeInline<CR>'
 	runtime plugin_conf/tcomment_vim.vimrc
 '''
-
-[[plugins]]
-repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
