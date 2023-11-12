@@ -80,8 +80,11 @@ endfunction
 vmap <Leader>y :call OscYank()<CR>
 
 if exists('g:vscode')
+    vmap ga= <Cmd>call VSCodeCall("codealignment.alignbyequals")<CR><Esc>
+    vmap ga. <Cmd>call VSCodeCall("codealignment.alignbyperiod")<CR><Esc>
+    vmap ga' <Cmd>call VSCodeCall("codealignment.alignbyquote")<CR><Esc>
+    vmap ga<Space> <Cmd>call VSCodeCall("codealignment.alignbyspace")<CR><Esc>
     nmap g] gd
     nmap g[ gH
-    nmap <Leader>c <C-/>
-    xmap <Leader>c <C-/>
+    map <Leader>c <C-/> 
 endif
