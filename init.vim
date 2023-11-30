@@ -58,7 +58,10 @@ endif
 " 256色表示設定
 set t_Co=256
 set termguicolors
-runtime! colors_conf/iceberg.vimrc
+
+if !exists('g:vscode')
+    runtime! colors_conf/iceberg.vimrc
+endif
 
 " ヘルプを日本語にする
 set helplang=ja
@@ -85,6 +88,6 @@ if exists('g:vscode')
     vmap ga' <Cmd>call VSCodeCall("codealignment.alignbyquote")<CR><Esc>
     vmap ga<Space> <Cmd>call VSCodeCall("codealignment.alignbyspace")<CR><Esc>
     nmap g] gd
-    nmap g[ gH
+    nmap g[ <Cmd>call VSCodeCall("editor.action.goToReferences")<CR><Esc>
     map <Leader>c <C-/> 
 endif
