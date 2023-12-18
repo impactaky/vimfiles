@@ -90,4 +90,5 @@ if exists('g:vscode')
     nmap g] gd
     nmap g[ <Cmd>call VSCodeCall("editor.action.goToReferences")<CR><Esc>
     map <Leader>c <C-/> 
+    nmap <Leader>f <Cmd>call VSCodeCall("editor.action.formatDocument")<CR><Esc>
 endif
