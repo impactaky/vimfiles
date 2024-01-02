@@ -92,3 +92,5 @@ if exists('g:vscode')
     map <Leader>c <C-/> 
     nmap <Leader>f <Cmd>call VSCodeCall("editor.action.formatDocument")<CR><Esc>
 endif
+
+" let g:denops#debug = 1

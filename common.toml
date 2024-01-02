@@ -5,7 +5,7 @@ repo = 'vim-denops/denops.vim'
 repo = 'impactaky/add_title_to_url.vim'
 depends = ['denops.vim']
 hook_add = '''
-    vmap 'm :'<,'>AddTitleToUrl<CR>
+    vmap 'm <Plug>(add_title_to_url)
 '''
 
 [[plugins]]
