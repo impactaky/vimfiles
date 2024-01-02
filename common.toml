@@ -1,9 +1,26 @@
 [[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'impactaky/add_title_to_url.vim'
+depends = ['denops.vim']
+hook_add = '''
+    vmap 'm :'<,'>AddTitleToUrl<CR>
+'''
+
+[[plugins]]
 repo = 'impactaky/radix.vim'
 hook_add = '''
 nmap <Space>b <Plug>(radix-toBin)
 nmap <Space>d <Plug>(radix-toDec)
 nmap <Space>x <Plug>(radix-toHex)
+'''
+
+[[plugins]]
+repo = 'impactaky/xonsh2py.nvim'
+lazy = 1
+hook_add = '''
+    nmap ;p <Plug>(xonsh2py)
 '''
 
 [[plugins]]
