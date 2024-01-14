@@ -83,14 +83,15 @@ endfunction
 vmap <Leader>y :call OscYank()<CR>
 
 if exists('g:vscode')
-    vmap ga= <Cmd>call VSCodeCall("codealignment.alignbyequals")<CR><Esc>
-    vmap ga. <Cmd>call VSCodeCall("codealignment.alignbyperiod")<CR><Esc>
-    vmap ga' <Cmd>call VSCodeCall("codealignment.alignbyquote")<CR><Esc>
-    vmap ga<Space> <Cmd>call VSCodeCall("codealignment.alignbyspace")<CR><Esc>
-    nmap g] gd
-    nmap g[ <Cmd>call VSCodeCall("editor.action.goToReferences")<CR><Esc>
     map <Leader>c <C-/> 
     nmap <Leader>f <Cmd>call VSCodeCall("editor.action.formatDocument")<CR><Esc>
+    nmap g[ <Cmd>call VSCodeCall("editor.action.goToReferences")<CR><Esc>
+    nmap g] gd
+    nmap mg <Cmd>call VSCodeCall("extension.gitGrep")<CR><Esc>
+    vmap ga' <Cmd>call VSCodeCall("codealignment.alignbyquote")<CR><Esc>
+    vmap ga. <Cmd>call VSCodeCall("codealignment.alignbyperiod")<CR><Esc>
+    vmap ga<Space> <Cmd>call VSCodeCall("codealignment.alignbyspace")<CR><Esc>
+    vmap ga= <Cmd>call VSCodeCall("codealignment.alignbyequals")<CR><Esc>
 endif
 
 " let g:denops#debug = 1
