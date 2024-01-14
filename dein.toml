@@ -145,15 +145,6 @@ vmap ;u <Plug>(github_url-line)
 '''
 
 [[plugins]]
-repo = 'impactaky/deepl.nvim'
-hook_add = '''
-vmap <Leader>j :call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
-vmap <Leader>e :call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
-nmap <Leader>j vip:call deepl#replace_to_translated_text('', 'JA')<CR>gvgq
-nmap <Leader>e vip:call deepl#replace_to_translated_text('', 'EN')<CR>gvgq
-'''
-
-[[plugins]]
 repo = 'impactaky/quick-print-debug.nvim'
 hook_add = '''
 nmap ql <Plug>(quick_print_debug_line)
